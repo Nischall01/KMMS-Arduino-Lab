@@ -24,6 +24,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Write build info
+        run: |
+          printf '{"sha":"%s","built_at":"%s"}\n' "${{ github.sha }}" "$(date -u +"%Y-%m-%dT%H:%M:%SZ")" > build-info.json
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
