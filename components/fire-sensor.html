@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fire / Flame Sensor | आगो सेन्सर</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body data-page="components" data-page-id="fire-sensor">
+  <div id="site-header"></div>
+  <main>
+    <nav id="breadcrumbs" class="breadcrumbs" data-trail='[{"label":"Home","href":"index.html"},{"label":"Components","href":"index.html#components"},{"label":"Fire / Flame Sensor"}]'></nav>
+    <div class="component-hero">
+      <div class="component-img-wrap">
+        <img src="../assets/images/components/fire_sensor.jpg" alt="Fire / Flame Sensor">
+      </div>
+      <div>
+        Fire / Flame Sensor</h1>
+    <span class="label-ne" data-i18n-ne="h1">आगो सेन्सर</span>
+        <p data-i18n="intro">Detects infrared radiation from flames. Modules provide analog intensity and/or digital threshold output.</p>
+      </div>
+    </div>
+    <h2 data-i18n="common.sec.whatItDoes" data-i18n-heading="true">What it does · के गर्छ</h2>
+    <p data-i18n="intro">Detects infrared radiation from flames. Modules provide analog intensity and/or digital threshold output.</p>
+    <h2 data-i18n="common.sec.pins" data-i18n-heading="true">Pins on the component · कम्पोनेन्टका पिन</h2>
+    <table><thead><tr><th>Pin</th><th>Type</th><th>Role</th></tr></thead><tbody><tr><td>VCC</td><td>Power</td><td>3.3–5 V</td></tr><tr><td>GND</td><td>Ground</td><td>—</td></tr><tr><td>AO</td><td>Analog</td><td>Flame strength 0–1023</td></tr><tr><td>DO</td><td>Digital</td><td>LOW when flame over threshold</td></tr></tbody></table>
+    <h2 data-i18n="common.sec.connect" data-i18n-heading="true">Connect to Arduino Uno · UNO मा जडान</h2>
+    <p>Example wiring (you may use other pins if you update the code). See <a href="../uno.html">Uno pinout</a>.</p>
+    <table><thead><tr><th>Component</th><th>Arduino Uno</th><th>Why</th></tr></thead><tbody><tr><td>VCC</td><td><code>5V</code></td><td>Power</td></tr><tr><td>GND</td><td><code>GND</code></td><td>Ground</td></tr><tr><td>AO</td><td><code>A0</code></td><td><code>analogRead</code> for flame level</td></tr><tr><td>DO</td><td><code>D3</code></td><td><code>digitalRead</code> for alarm trigger</td></tr></tbody></table>
+    <div class="callout callout-warning" data-i18n-html="drillCallout"></div>
+    <h2 data-i18n="common.sec.codeNeed" data-i18n-heading="true">Arduino code you need · आवश्यक कोड</h2>
+    <ul class="pill-list">
+      <li><a href="../functions/pinmode.html">pinmode()</a></li>
+      <li><a href="../functions/analogread.html">analogread()</a></li>
+      <li><a href="../functions/digitalread.html">digitalread()</a></li>
+      <li><a href="../functions/tone.html">tone()</a></li>
+    </ul>
+    <h2 data-i18n="common.sec.example" data-i18n-heading="true">Example use case · उदाहरण</h2>
+    <p><strong data-i18n="exampleTitle">Fire alarm beep</strong> — <span data-i18n="exampleDesc">Sound buzzer when digital output detects flame.</span></p>
+    <pre data-i18n-code="code">const int fireDO = 3;
+
+void setup() {
+  pinMode(fireDO, INPUT);
+  pinMode(5, OUTPUT);
+}
+
+void loop() {
+  if (digitalRead(fireDO) == LOW) {
+    tone(5, 1500, 300);
+  }
+  delay(100);
+}</pre>
+    <h2 data-i18n="common.sec.related" data-i18n-heading="true">Related components</h2>
+    <ul class="pill-list">
+      <li><a href="../components/buzzer.html">Buzzer</a></li>
+      <li><a href="../components/ir-sensor.html">IR Sensor</a></li>
+    </ul>
+    <a class="back-link" href="../index.html#components"><span data-i18n="common.sec.backComponents">← All components</span></a>
+  </main>
+  <div id="site-footer"></div>
+  <script src="../js/i18n-data.js"></script>
+  <script src="../js/i18n.js"></script>
+  <script src="../js/layout.js"></script>
+</body>
+</html>

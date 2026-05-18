@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arduino Uno Pinout | Arduino UNO पिनहरू</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="uno" data-page-id="uno">
+  <div id="site-header"></div>
+  <main>
+    <h1 data-i18n="h1">Arduino Uno Pinout</h1>
+    <span class="label-ne" data-i18n-ne="h1">Arduino UNO पिन आरेख</span>
+    <p class="lead" data-i18n-html="lead">
+      The Uno is the <strong>brain (मस्तिष्क)</strong> of your system. Every component connects to specific pins for power, ground, and signals.
+    </p>
+
+    <figure class="uno-visual">
+      <img src="assets/images/components/Uno.svg" alt="Arduino Uno R3 board (ATmega328P)" loading="lazy">
+      <figcaption>ATmega328P · Arduino UNO R3</figcaption>
+    </figure>
+
+    <h2 data-i18n="secDiagram" data-i18n-heading="true">Pin diagram · पिन चित्र</h2>
+    <div class="pinout-board">
+      <div class="pinout-col">
+        <h3>Left side (power &amp; analog)</h3>
+        <div class="pin-row power"><span class="pin-label">RESET</span><span class="pin-name">Reset board</span></div>
+        <div class="pin-row power"><span class="pin-label">3.3V</span><span class="pin-name">3.3 V output (low current)</span></div>
+        <div class="pin-row power"><span class="pin-label">5V</span><span class="pin-name">5 V for sensors (limited current)</span></div>
+        <div class="pin-row power"><span class="pin-label">GND</span><span class="pin-name">Ground — common return</span></div>
+        <div class="pin-row power"><span class="pin-label">Vin</span><span class="pin-name">External 7–12 V in (optional)</span></div>
+        <div class="pin-row analog"><span class="pin-label">A0</span><span class="pin-name">Analog input 0</span></div>
+        <div class="pin-row analog"><span class="pin-label">A1</span><span class="pin-name">Analog input 1</span></div>
+        <div class="pin-row analog"><span class="pin-label">A2</span><span class="pin-name">Analog input 2</span></div>
+        <div class="pin-row analog"><span class="pin-label">A3</span><span class="pin-name">Analog input 3</span></div>
+        <div class="pin-row analog"><span class="pin-label">A4</span><span class="pin-name">Analog / I2C SDA</span></div>
+        <div class="pin-row analog"><span class="pin-label">A5</span><span class="pin-name">Analog / I2C SCL</span></div>
+      </div>
+      <div class="pinout-col">
+        <h3>Right side (Serial, digital &amp; PWM)</h3>
+        <div class="pin-row serial"><span class="pin-label">D0</span><span class="pin-name">RX — receives Serial data</span></div>
+        <div class="pin-row serial"><span class="pin-label">D1</span><span class="pin-name">TX — sends Serial data</span></div>
+        <div class="pin-row"><span class="pin-label">D2</span><span class="pin-name">Digital — good for interrupts</span></div>
+        <div class="pin-row pwm"><span class="pin-label">D3</span><span class="pin-name">PWM ~</span></div>
+        <div class="pin-row"><span class="pin-label">D4</span><span class="pin-name">Digital</span></div>
+        <div class="pin-row pwm"><span class="pin-label">D5</span><span class="pin-name">PWM ~ — buzzer</span></div>
+        <div class="pin-row pwm"><span class="pin-label">D6</span><span class="pin-name">PWM ~ — servo signal</span></div>
+        <div class="pin-row"><span class="pin-label">D7</span><span class="pin-name">Digital</span></div>
+        <div class="pin-row"><span class="pin-label">D8</span><span class="pin-name">Digital</span></div>
+        <div class="pin-row pwm"><span class="pin-label">D9</span><span class="pin-name">PWM ~</span></div>
+        <div class="pin-row pwm"><span class="pin-label">D10</span><span class="pin-name">PWM ~</span></div>
+        <div class="pin-row pwm"><span class="pin-label">D11</span><span class="pin-name">PWM ~</span></div>
+        <div class="pin-row"><span class="pin-label">D12</span><span class="pin-name">Digital</span></div>
+        <div class="pin-row"><span class="pin-label">D13</span><span class="pin-name">Built-in LED + digital</span></div>
+      </div>
+    </div>
+
+    <h2 data-i18n="secSerial" data-i18n-heading="true">D0 &amp; D1 — Serial pins (UART) · सिरियल पिन</h2>
+    <span class="label-ne" data-i18n-ne="serialSub">डिजिटल ० र १ = कम्प्युटरसँग कुराकानी</span>
+    <p data-i18n="serialIntro">
+      Pins <strong>D0</strong> and <strong>D1</strong> are reserved for <strong>hardware Serial</strong> communication (UART).
+      They let the Arduino talk to your computer—or to another device such as a Bluetooth or GPS module—one bit at a time.
+    </p>
+
+    <table>
+      <thead>
+        <tr><th>Pin</th><th>Name</th><th>Direction</th><th>What it does</th><th>Why it matters</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>D0</code></td>
+          <td><strong>RX</strong> (Receive)</td>
+          <td>Input to Arduino</td>
+          <td>Listens for data coming <em>into</em> the board</td>
+          <td>Connected inside the Uno to the USB chip so your PC can send sketches and <code>Serial Monitor</code> commands</td>
+        </tr>
+        <tr>
+          <td><code>D1</code></td>
+          <td><strong>TX</strong> (Transmit)</td>
+          <td>Output from Arduino</td>
+          <td>Sends data <em>out</em> from the board</td>
+          <td>Used when you <code>Serial.print()</code> — text goes to the computer’s Serial Monitor</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout" data-i18n-html="serialPhone">
+      <strong>Think of it like a phone call · फोन कल जस्तै</strong>
+      <strong>TX (D1)</strong> = you speaking (Arduino sends). <strong>RX (D0)</strong> = you listening (Arduino receives).
+      For two Arduinos to talk, wire <strong>TX → RX</strong> and <strong>RX → TX</strong> crosswise, and share <strong>GND</strong>.
+    </div>
+
+    <h3>When you upload code or use Serial Monitor</h3>
+    <p data-i18n="serialUpload">
+      While the USB cable is connected, the computer uses D0/D1 to upload your program and for debugging with
+      <code>Serial.begin(9600)</code> and <code>Serial.println()</code>.
+      If you also connect sensors, motors, or LEDs to D0 or D1, those wires can <strong>fight</strong> the USB chip—uploads may fail or Serial output may look like garbage.
+    </p>
+
+    <h3 data-i18n="serialRulesTitle">Rules for this robotics course · नियमहरू</h3>
+    <ul>
+      <li><strong>Do not</strong> wire components from this site to D0 or D1 unless you are doing a dedicated Serial project and know how to disconnect USB conflicts.</li>
+      <li>Use <strong>D2–D13</strong> for LEDs, sensors, servos, relays, and motor drivers instead.</li>
+      <li>After upload, you can still use <code>Serial.print()</code> in code—it uses D1 automatically; you do not need extra wires to the USB port.</li>
+    </ul>
+
+    <pre>// Example: print sensor value to computer (uses D1 TX internally)
+void setup() {
+  Serial.begin(9600);  // 9600 bits per second
+}
+
+void loop() {
+  Serial.println("Hello from Arduino!");
+  delay(1000);
+}</pre>
+
+    <div class="callout callout-warning" data-i18n-html="serialNote"></div>
+
+    <h2 data-i18n="secPinTypes" data-i18n-heading="true">Pin types · पिन प्रकार</h2>
+    <table>
+      <thead><tr><th>Type</th><th>Pins</th><th>Use</th></tr></thead>
+      <tbody>
+        <tr><td>5V / GND</td><td>Power headers</td><td>Power sensors and modules (check current!)</td></tr>
+        <tr><td>Serial (UART)</td><td><code>D0</code> RX, <code>D1</code> TX</td><td>USB upload, <code>Serial Monitor</code>, GPS/Bluetooth modules — avoid wiring other parts here during class projects</td></tr>
+        <tr><td>Digital</td><td>D2–D13</td><td>ON/OFF signals — <a href="functions/digitalwrite.html">digitalWrite</a>, <a href="functions/digitalread.html">digitalRead</a></td></tr>
+        <tr><td>PWM ~</td><td>D3, D5, D6, D9, D10, D11</td><td>Variable power — <a href="functions/analogwrite.html">analogWrite</a> (0–255)</td></tr>
+        <tr><td>Analog IN</td><td>A0–A5</td><td>Variable voltage — <a href="functions/analogread.html">analogRead</a> (0–1023)</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout callout-warning" data-i18n-html="safetyText">
+      <strong>Safety · सुरक्षा</strong>
+      Do not run motors or relays directly from Arduino pins — use a driver (L298N) or relay module.
+      Share one <strong>GND (ग्राउन्ड)</strong> between Uno and external power supplies.
+      Uno 5V pin can supply only ~<strong>400 mA</strong> total — not enough for motors.
+    </div>
+
+    <h2 data-i18n="secSiteComponents" data-i18n-heading="true">Components on this site · यस साइटका कम्पोनेन्ट</h2>
+    <ul class="pill-list">
+      <li><a href="components/builtin-led.html">Built-in LED</a></li>
+      <li><a href="components/servo-motor.html">Servo</a></li>
+      <li><a href="components/dc-motor-l298n.html">DC Motor + L298N</a></li>
+      <li><a href="components/relay.html">Relay</a></li>
+      <li><a href="components/ir-sensor.html">IR Sensor</a></li>
+      <li><a href="components/ultrasonic-sensor.html">Ultrasonic</a></li>
+      <li><a href="components/fire-sensor.html">Fire Sensor</a></li>
+      <li><a href="components/potentiometer.html">Potentiometer</a></li>
+      <li><a href="components/leds.html">LEDs</a></li>
+      <li><a href="components/buzzer.html">Buzzer</a></li>
+    </ul>
+  </main>
+  <div id="site-footer"></div>
+  <script src="js/i18n-data.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/layout.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buzzer | बजर</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body data-page="components" data-page-id="buzzer">
+  <div id="site-header"></div>
+  <main>
+    <nav id="breadcrumbs" class="breadcrumbs" data-trail='[{"label":"Home","href":"index.html"},{"label":"Components","href":"index.html#components"},{"label":"Buzzer"}]'></nav>
+    <div class="component-hero">
+      <div class="component-img-wrap">
+        <img src="../assets/images/components/buzzer.jpg" alt="Buzzer">
+      </div>
+      <div>
+        <h1 data-i18n="h1">Buzzer</h1>
+    <span class="label-ne" data-i18n-ne="h1">बजर</span>
+        <p>Makes beeps. Passive buzzers need <code>tone()</code>; active buzzers beep with simple <code>digitalWrite(HIGH)</code>.</p>
+      </div>
+    </div>
+    <h2 data-i18n="common.sec.whatItDoes" data-i18n-heading="true">What it does · के गर्छ</h2>
+    <p>Makes beeps. Passive buzzers need <code>tone()</code>; active buzzers beep with simple <code>digitalWrite(HIGH)</code>.</p>
+    <h2 data-i18n="common.sec.pins" data-i18n-heading="true">Pins on the component · कम्पोनेन्टका पिन</h2>
+    <table><thead><tr><th>Pin</th><th>Type</th><th>Role</th></tr></thead><tbody><tr><td>+</td><td>Signal</td><td>From Arduino pin</td></tr><tr><td>−</td><td>Ground</td><td>GND</td></tr></tbody></table>
+    <h2 data-i18n="common.sec.connect" data-i18n-heading="true">Connect to Arduino Uno · UNO मा जडान</h2>
+    <p>Example wiring (you may use other pins if you update the code). See <a href="../uno.html">Uno pinout</a>.</p>
+    <figure class="wiring-diagram">
+      <img src="../assets/images/connections/Uno_Buzzer.svg" alt="Fritzing diagram: Arduino Uno and buzzer" loading="lazy">
+    </figure>
+    <table><thead><tr><th>Component</th><th>Arduino Uno</th><th>Why</th></tr></thead><tbody><tr><td>+</td><td><code>D5</code></td><td><code>tone()</code> for passive buzzer frequencies</td></tr><tr><td>−</td><td><code>GND</code></td><td>Ground return</td></tr></tbody></table>
+    
+    <h2 data-i18n="common.sec.codeNeed" data-i18n-heading="true">Arduino code you need · आवश्यक कोड</h2>
+    <ul class="pill-list">
+      <li><a href="../functions/pinmode.html">pinmode()</a></li>
+      <li><a href="../functions/tone.html">tone()</a></li>
+      <li><a href="../functions/delay.html">delay()</a></li>
+      <li><a href="../functions/digitalwrite.html">digitalwrite()</a></li>
+    </ul>
+    <h2 data-i18n="common.sec.example" data-i18n-heading="true">Example use case · उदाहरण</h2>
+    <p><strong data-i18n="exampleTitle">Doorbell pattern</strong> — <span data-i18n="exampleDesc">Two short beeps when button pressed (with IR or button on another pin).</span></p>
+    <pre data-i18n-code="code">const int buzzerPin = 5;
+
+void setup() {
+  pinMode(buzzerPin, OUTPUT);
+}
+
+void loop() {
+  tone(buzzerPin, 880, 150);
+  delay(200);
+  tone(buzzerPin, 1100, 150);
+  delay(2000);
+}</pre>
+    <h2 data-i18n="common.sec.related" data-i18n-heading="true">Related components</h2>
+    <ul class="pill-list">
+      <li><a href="../components/ultrasonic-sensor.html">Ultrasonic Sensor</a></li>
+      <li><a href="../components/fire-sensor.html">Fire Sensor</a></li>
+    </ul>
+    <a class="back-link" href="../index.html#components"><span data-i18n="common.sec.backComponents">← All components</span></a>
+  </main>
+  <div id="site-footer"></div>
+  <script src="../js/i18n-data.js"></script>
+  <script src="../js/i18n.js"></script>
+  <script src="../js/layout.js"></script>
+</body>
+</html>

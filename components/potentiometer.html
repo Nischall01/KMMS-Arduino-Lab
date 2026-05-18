@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Potentiometer | पोटेन्सियोमिटर</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body data-page="components" data-page-id="potentiometer">
+  <div id="site-header"></div>
+  <main>
+    <nav id="breadcrumbs" class="breadcrumbs" data-trail='[{"label":"Home","href":"index.html"},{"label":"Components","href":"index.html#components"},{"label":"Potentiometer"}]'></nav>
+    <div class="component-hero">
+      <div class="component-img-wrap">
+        <img src="../assets/images/components/potentiometer.jpg" alt="Potentiometer">
+      </div>
+      <div>
+        Potentiometer</h1>
+    <span class="label-ne" data-i18n-ne="h1">पोटेन्सियोमिटर</span>
+        <p data-i18n="intro">A variable resistor (knob). The center pin (wiper) voltage changes as you turn it — Arduino reads it as 0–1023.</p>
+      </div>
+    </div>
+    <h2 data-i18n="common.sec.whatItDoes" data-i18n-heading="true">What it does · के गर्छ</h2>
+    <p data-i18n="intro">A variable resistor (knob). The center pin (wiper) voltage changes as you turn it — Arduino reads it as 0–1023.</p>
+    <h2 data-i18n="common.sec.pins" data-i18n-heading="true">Pins on the component · कम्पोनेन्टका पिन</h2>
+    <table><thead><tr><th>Pin</th><th>Type</th><th>Role</th></tr></thead><tbody><tr><td>Pin 1</td><td>End</td><td>Connect to 5V</td></tr><tr><td>Pin 2 (wiper)</td><td>Signal</td><td>To analog pin</td></tr><tr><td>Pin 3</td><td>End</td><td>Connect to GND</td></tr></tbody></table>
+    <h2 data-i18n="common.sec.connect" data-i18n-heading="true">Connect to Arduino Uno · UNO मा जडान</h2>
+    <p>Example wiring (you may use other pins if you update the code). See <a href="../uno.html">Uno pinout</a>.</p>
+    <figure class="wiring-diagram">
+      <img src="../assets/images/connections/Uno_Potentiometer.svg" alt="Fritzing diagram: Arduino Uno and potentiometer" loading="lazy">
+    </figure>
+    <table><thead><tr><th>Component</th><th>Arduino Uno</th><th>Why</th></tr></thead><tbody><tr><td>End 1</td><td><code>5V</code></td><td>Full voltage across pot</td></tr><tr><td>Wiper</td><td><code>A1</code></td><td><code>analogRead</code> gets position</td></tr><tr><td>End 2</td><td><code>GND</code></td><td>0 V reference</td></tr></tbody></table>
+    
+    <h2 data-i18n="common.sec.codeNeed" data-i18n-heading="true">Arduino code you need · आवश्यक कोड</h2>
+    <ul class="pill-list">
+      <li><a href="../functions/analogread.html">analogread()</a></li>
+      <li><a href="../functions/analogwrite.html">analogwrite()</a></li>
+    </ul>
+    <h2 data-i18n="common.sec.example" data-i18n-heading="true">Example use case · उदाहरण</h2>
+    <p><strong data-i18n="exampleTitle">Knob controls LED brightness</strong> — <span data-i18n="exampleDesc">Turn pot to dim an LED on D6.</span></p>
+    <pre data-i18n-code="code">const int potPin = A1;
+const int ledPin = 6;
+
+void setup() {
+  pinMode(ledPin, OUTPUT);
+}
+
+void loop() {
+  int val = analogRead(potPin);
+  analogWrite(ledPin, val / 4);
+}</pre>
+    <h2 data-i18n="common.sec.related" data-i18n-heading="true">Related components</h2>
+    <ul class="pill-list">
+      <li><a href="../components/leds.html">LEDs</a></li>
+      <li><a href="../components/servo-motor.html">Servo Motor</a></li>
+    </ul>
+    <a class="back-link" href="../index.html#components"><span data-i18n="common.sec.backComponents">← All components</span></a>
+  </main>
+  <div id="site-footer"></div>
+  <script src="../js/i18n-data.js"></script>
+  <script src="../js/i18n.js"></script>
+  <script src="../js/layout.js"></script>
+</body>
+</html>

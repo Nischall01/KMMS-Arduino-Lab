@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Built-in LED | अन्तर्निर्मित LED</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body data-page="components" data-page-id="builtin-led">
+  <div id="site-header"></div>
+  <main>
+    <nav id="breadcrumbs" class="breadcrumbs" data-trail='[{"label":"Home","href":"index.html"},{"label":"Components","href":"index.html#components"},{"label":"Built-in LED"}]'></nav>
+    <div class="component-hero">
+      <div class="component-img-wrap">
+        <img src="../assets/images/components/builtin_led.jpg" alt="Built-in LED">
+      </div>
+      <div>
+        <h1>Built-in LED</h1>
+    <span class="label-ne" data-i18n-ne="h1">अन्तर्निर्मित LED</span>
+        <p data-i18n="intro">A small light already soldered on the Arduino board, connected to digital pin D13 through a resistor.</p>
+      </div>
+    </div>
+    <h2 data-i18n="common.sec.whatItDoes" data-i18n-heading="true">What it does · के गर्छ</h2>
+    <p data-i18n="intro">A small light already soldered on the Arduino board, connected to digital pin D13 through a resistor.</p>
+    <h2 data-i18n="common.sec.pins" data-i18n-heading="true">Pins on the component · कम्पोनेन्टका पिन</h2>
+    <table><thead><tr><th>Pin</th><th>Type</th><th>Role</th></tr></thead><tbody><tr><td>LED (onboard)</td><td>—</td><td>On <code>D13</code>; pre-wired, no external wiring</td></tr></tbody></table>
+    <h2 data-i18n="common.sec.codeNeed" data-i18n-heading="true">Arduino code you need · आवश्यक कोड</h2>
+    <ul class="pill-list">
+      <li><a href="../functions/pinmode.html">pinmode()</a></li>
+      <li><a href="../functions/digitalwrite.html">digitalwrite()</a></li>
+      <li><a href="../functions/delay.html">delay()</a></li>
+    </ul>
+    <h2 data-i18n="common.sec.example" data-i18n-heading="true">Example use case · उदाहरण</h2>
+    <p><strong data-i18n="exampleTitle">SOS blink pattern</strong> — <span data-i18n="exampleDesc">Flash the onboard LED in short and long bursts like an emergency signal.</span></p>
+    <pre data-i18n-code="code">const int led = LED_BUILTIN;
+
+void setup() {
+  pinMode(led, OUTPUT);
+}
+
+void loop() {
+  for (int i = 0; i < 3; i++) { digitalWrite(led, HIGH); delay(200); digitalWrite(led, LOW); delay(200); }
+  delay(400);
+  for (int i = 0; i < 3; i++) { digitalWrite(led, HIGH); delay(600); digitalWrite(led, LOW); delay(200); }
+  delay(1000);
+}</pre>
+    <h2 data-i18n="common.sec.related" data-i18n-heading="true">Related components</h2>
+    <ul class="pill-list">
+      <li><a href="../components/leds.html">External LEDs</a></li>
+      <li><a href="../components/relay.html">Relay</a></li>
+    </ul>
+    <a class="back-link" href="../index.html#components"><span data-i18n="common.sec.backComponents">← All components</span></a>
+  </main>
+  <div id="site-footer"></div>
+  <script src="../js/i18n-data.js"></script>
+  <script src="../js/i18n.js"></script>
+  <script src="../js/layout.js"></script>
+</body>
+</html>

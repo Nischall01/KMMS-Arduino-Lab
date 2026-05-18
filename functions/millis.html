@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>millis() | मिलिसेकेन्ड समय</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body data-page="functions" data-page-id="millis">
+  <div id="site-header"></div>
+  <main>
+    <nav id="breadcrumbs" class="breadcrumbs" data-trail='[{"label":"Home","href":"index.html"},{"label":"Functions","href":"index.html#functions"},{"label":"millis()"}]'></nav>
+    <span class="metaphor" data-i18n="metaphor">Background stopwatch · पृष्ठभूमि स्टपवाच</span>
+    <h1 data-i18n="h1">millis()</h1>
+    <span class="label-ne" data-i18n-ne="labelNe">मिलिसेकेन्ड समय</span>
+    <p data-i18n="desc">Returns milliseconds since the Arduino started — keeps counting even while your code runs other tasks (non-blocking timing).</p>
+    <h2 data-i18n="common.sec.syntax" data-i18n-heading="true">Syntax</h2>
+    <pre>unsigned long t = millis();</pre>
+    <h2 data-i18n="common.sec.parameters" data-i18n-heading="true">Parameters</h2>
+    <table><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>none</td><td>—</td></tr></tbody></table>
+    <h2 data-i18n="common.sec.returns" data-i18n-heading="true">Returns</h2>
+    <p>Unsigned long (overflows after ~49 days).</p>
+    <h2 data-i18n="common.sec.whenUse" data-i18n-heading="true">When to use</h2>
+    <ul><li>Blink LED without delay()</li><li>Read ultrasonic every 100 ms</li><li>Debounce buttons</li></ul>
+    <h2 data-i18n="common.sec.mistakes" data-i18n-heading="true">Common mistakes</h2>
+    <div class="callout"><strong>Pattern</strong> Store last time; if (millis() - last &gt;= interval) { do work; last = millis(); }</div>
+    <h2 data-i18n="common.sec.exampleShort" data-i18n-heading="true">Example</h2>
+    <pre>unsigned long last = 0;
+void loop() {
+  if (millis() - last >= 500) {
+    last = millis();
+    digitalWrite(13, !digitalRead(13));
+  }
+}</pre>
+    <h2 data-i18n="common.sec.seeAlso" data-i18n-heading="true">See also</h2>
+    <ul class="pill-list">
+      <li><a href="delay.html">delay()</a></li>
+      <li><a href="pulsein.html">pulseIn()</a></li>
+    </ul>
+    <h2 data-i18n="common.sec.usedBy" data-i18n-heading="true">Used by components</h2>
+    <ul class="pill-list">
+      <li><a href="../components/ultrasonic-sensor.html">Ultrasonic Sensor</a></li>
+    </ul>
+    <a class="back-link" href="../index.html#functions"><span data-i18n="common.sec.backFunctions">← All functions</span></a>
+  </main>
+  <div id="site-footer"></div>
+  <script src="../js/i18n-data.js"></script>
+  <script src="../js/i18n.js"></script>
+  <script src="../js/layout.js"></script>
+</body>
+</html>

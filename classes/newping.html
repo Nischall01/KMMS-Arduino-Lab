@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NewPing Class | NewPing.h कक्षा</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body data-page="classes" data-page-id="newping">
+  <div id="site-header"></div>
+  <main>
+    <nav id="breadcrumbs" class="breadcrumbs" data-trail='[{"label":"Home","href":"index.html"},{"label":"Classes","href":"index.html#classes"},{"label":"NewPing Class"}]'></nav>
+    <h1 data-i18n="h1">NewPing Class</h1>
+    <span class="label-ne" data-i18n-ne="labelNe">NewPing.h कक्षा</span>
+    <p data-i18n="intro">Third-party library that reads HC-SR04 ultrasonic sensors with one call — handles timing and timeouts better than raw <code>pulseIn</code> in many cases.</p>
+    <h2 data-i18n="common.sec.installLib" data-i18n-heading="true">Install library · लाइब्रेरी स्थापना</h2>
+    <p data-i18n="install">Arduino IDE → <strong>Sketch → Include Library → Manage Libraries</strong> → search <strong>NewPing</strong> → Install.</p>
+    <h2 data-i18n="common.sec.methods" data-i18n-heading="true">Methods · विधिहरू</h2>
+    <table><thead><tr><th>Method</th><th>Description</th></tr></thead><tbody>
+  <tr><td><code>NewPing(trig, echo, maxCm)</code></td><td>Constructor: pins and max distance</td></tr>
+  <tr><td><code>ping_cm()</code></td><td>Distance in centimeters (0 if out of range)</td></tr>
+  <tr><td><code>ping_in()</code></td><td>Distance in inches</td></tr>
+  </tbody></table>
+    <h2 data-i18n="common.sec.wiring" data-i18n-heading="true">Wiring to Uno · जडान</h2>
+    <p>Trig → <code>D2</code>, Echo → <code>D3</code>, VCC/GND as usual. See <a href="../components/ultrasonic-sensor.html">Ultrasonic Sensor</a>.</p>
+    <h2 data-i18n="common.sec.example" data-i18n-heading="true">Example · उदाहरण</h2>
+    <pre>#include <NewPing.h>
+#define TRIG 2
+#define ECHO 3
+#define MAX 200
+NewPing sonar(TRIG, ECHO, MAX);
+
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  Serial.print("cm: ");
+  Serial.println(sonar.ping_cm());
+  delay(200);
+}</pre>
+    <h2 data-i18n="common.sec.related" data-i18n-heading="true">Related</h2>
+    <ul class="pill-list">
+      <li><a href="../components/ultrasonic-sensor.html">Ultrasonic Sensor</a></li>
+      <li><a href="../functions/pulsein.html">pulseIn() (manual method)</a></li>
+    </ul>
+    <a class="back-link" href="../index.html#classes"><span data-i18n="common.sec.backClasses">← All classes</span></a>
+  </main>
+  <div id="site-footer"></div>
+  <script src="../js/i18n-data.js"></script>
+  <script src="../js/i18n.js"></script>
+  <script src="../js/layout.js"></script>
+</body>
+</html>

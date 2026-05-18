@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LEDs (External) | बाह्य LED</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body data-page="components" data-page-id="leds">
+  <div id="site-header"></div>
+  <main>
+    <nav id="breadcrumbs" class="breadcrumbs" data-trail='[{"label":"Home","href":"index.html"},{"label":"Components","href":"index.html#components"},{"label":"LEDs (External)"}]'></nav>
+    <div class="component-hero">
+      <div class="component-img-wrap">
+        <img src="../assets/images/components/leds.jpg" alt="LEDs (External)">
+      </div>
+      <div>
+        <h1>LEDs (External)</h1>
+    <span class="label-ne" data-i18n-ne="h1">बाह्य LED</span>
+        <p data-i18n="intro">Light-emitting diodes show status. Need a current-limiting resistor (typically 220 Ω–330 Ω) so the LED does not burn out.</p>
+      </div>
+    </div>
+    <h2 data-i18n="common.sec.whatItDoes" data-i18n-heading="true">What it does · के गर्छ</h2>
+    <p data-i18n="intro">Light-emitting diodes show status. Need a current-limiting resistor (typically 220 Ω–330 Ω) so the LED does not burn out.</p>
+    <h2 data-i18n="common.sec.pins" data-i18n-heading="true">Pins on the component · कम्पोनेन्टका पिन</h2>
+    <table><thead><tr><th>Pin</th><th>Type</th><th>Role</th></tr></thead><tbody><tr><td>Anode (+, long leg)</td><td>Signal</td><td>Toward Arduino pin via resistor</td></tr><tr><td>Cathode (−, short leg)</td><td>Ground</td><td>To GND</td></tr></tbody></table>
+    <h2 data-i18n="common.sec.connect" data-i18n-heading="true">Connect to Arduino Uno · UNO मा जडान</h2>
+    <p>Example wiring (you may use other pins if you update the code). See <a href="../uno.html">Uno pinout</a>.</p>
+    <figure class="wiring-diagram">
+      <img src="../assets/images/connections/Uno_Led.svg" alt="Wiring diagram: Arduino Uno and external LED" loading="lazy">
+    </figure>
+    <table><thead><tr><th>Component</th><th>Arduino Uno</th><th>Why</th></tr></thead><tbody><tr><td>Anode → resistor</td><td><code>D6</code> (PWM)</td><td><code>digitalWrite</code> or <code>analogWrite</code> for brightness</td></tr><tr><td>Cathode</td><td><code>GND</code></td><td>Completes circuit</td></tr></tbody></table>
+    <div class="callout" data-i18n-html="resistorCallout"></div>
+    <h2 data-i18n="common.sec.codeNeed" data-i18n-heading="true">Arduino code you need · आवश्यक कोड</h2>
+    <ul class="pill-list">
+      <li><a href="../functions/pinmode.html">pinmode()</a></li>
+      <li><a href="../functions/digitalwrite.html">digitalwrite()</a></li>
+      <li><a href="../functions/analogwrite.html">analogwrite()</a></li>
+      <li><a href="../functions/delay.html">delay()</a></li>
+    </ul>
+    <h2 data-i18n="common.sec.example" data-i18n-heading="true">Example use case · उदाहरण</h2>
+    <p><strong data-i18n="exampleTitle">Single LED blink</strong> — <span data-i18n="exampleDesc">Matches the wiring diagram: one LED on pin D6 blinks on and off.</span></p>
+    <pre data-i18n-code="code">const int ledPin = 6;
+
+void setup() {
+  pinMode(ledPin, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(ledPin, HIGH);
+  delay(1000);
+  digitalWrite(ledPin, LOW);
+  delay(1000);
+}</pre>
+    <p><strong data-i18n="exampleTitle2">Traffic light sequence</strong> — <span data-i18n="exampleDesc2">Three LEDs on D6, D7, and D8 cycle green → yellow → red (wire three LEDs as in the diagram below).</span></p>
+    <figure class="wiring-diagram">
+      <img src="../assets/images/connections/arduino_circuit_3_leds.png" alt="Wiring diagram: Arduino Uno with three LEDs for traffic light" loading="lazy">
+    </figure>
+    <pre data-i18n-code="codeTraffic">const int red = 11, yellow = 10, green = 9;
+
+void setup() {
+  pinMode(red, OUTPUT);
+  pinMode(yellow, OUTPUT);
+  pinMode(green, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(green, HIGH);
+  delay(3000);
+  digitalWrite(green, LOW);
+  digitalWrite(yellow, HIGH);
+  delay(1000);
+  digitalWrite(yellow, LOW);
+  digitalWrite(red, HIGH);
+  delay(3000);
+  digitalWrite(red, LOW);
+}</pre>
+    <h2 data-i18n="common.sec.related" data-i18n-heading="true">Related components</h2>
+    <ul class="pill-list">
+      <li><a href="../components/builtin-led.html">Built-in LED</a></li>
+      <li><a href="../components/potentiometer.html">Potentiometer</a></li>
+    </ul>
+    <a class="back-link" href="../index.html#components"><span data-i18n="common.sec.backComponents">← All components</span></a>
+  </main>
+  <div id="site-footer"></div>
+  <script src="../js/i18n-data.js"></script>
+  <script src="../js/i18n.js"></script>
+  <script src="../js/layout.js"></script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DC Motor + L298N Driver | DC मोटर + L298N</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body data-page="components" data-page-id="dc-motor-l298n">
+  <div id="site-header"></div>
+  <main>
+    <nav id="breadcrumbs" class="breadcrumbs" data-trail='[{"label":"Home","href":"index.html"},{"label":"Components","href":"index.html#components"},{"label":"DC Motor + L298N Driver"}]'></nav>
+    <div class="component-hero">
+      <div class="component-img-duo">
+        <div class="component-img-wrap">
+          <img src="../assets/images/components/dc_motor.jpg" alt="DC Motor">
+        </div>
+        <div class="component-img-wrap">
+          <img src="../assets/images/components/l298n.jpg" alt="L298N Motor Driver">
+        </div>
+      </div>
+      <div>
+        <h1>DC Motor + L298N Driver</h1>
+    <span class="label-ne" data-i18n-ne="h1">DC मोटर + L298N</span>
+        <p data-i18n="intro">A DC motor spins continuously (wheels, fans). The L298N H-bridge driver lets the Arduino control direction and speed without burning the board.</p>
+      </div>
+    </div>
+    <h2 data-i18n="common.sec.whatItDoes" data-i18n-heading="true">What it does · के गर्छ</h2>
+    <p data-i18n="intro">A DC motor spins continuously (wheels, fans). The L298N H-bridge driver lets the Arduino control direction and speed without burning the board.</p>
+    <h2 data-i18n="common.sec.pins" data-i18n-heading="true">Pins on the component · कम्पोनेन्टका पिन</h2>
+    <table><thead><tr><th>Pin</th><th>Type</th><th>Role</th></tr></thead><tbody><tr><td>ENA</td><td>PWM input</td><td>Speed control</td></tr><tr><td>IN1, IN2</td><td>Digital</td><td>Direction (forward / reverse)</td></tr><tr><td>OUT1, OUT2</td><td>Motor outputs</td><td>To motor terminals</td></tr><tr><td>12V, GND</td><td>Motor power</td><td>Separate battery 7–12 V</td></tr><tr><td>+5V, GND (logic)</td><td>Logic supply</td><td>Often jumper ON — powers logic from onboard regulator</td></tr></tbody></table>
+    <h2 data-i18n="common.sec.connect" data-i18n-heading="true">Connect to Arduino Uno · UNO मा जडान</h2>
+    <p>Example wiring (you may use other pins if you update the code). See <a href="../uno.html">Uno pinout</a>.</p>
+    <figure class="wiring-diagram">
+      <img src="../assets/images/connections/Uno_MotorDriver_DCmotor.svg" alt="Fritzing diagram: Arduino Uno, L298N driver, and DC motor" loading="lazy">
+    </figure>
+    <table><thead><tr><th>Component</th><th>Arduino Uno</th><th>Why</th></tr></thead><tbody><tr><td>ENA</td><td><code>D5</code> (PWM)</td><td><code>analogWrite</code> controls speed 0–255</td></tr><tr><td>IN1</td><td><code>D7</code></td><td>Direction bit 1</td></tr><tr><td>IN2</td><td><code>D8</code></td><td>Direction bit 2</td></tr><tr><td>GND</td><td><code>GND</code></td><td><strong>Must</strong> connect Uno GND to L298N GND</td></tr></tbody></table>
+    <div class="callout callout-warning" data-i18n-html="safetyCallout"></div>
+    <h2 data-i18n="common.sec.codeNeed" data-i18n-heading="true">Arduino code you need · आवश्यक कोड</h2>
+    <ul class="pill-list">
+      <li><a href="../functions/pinmode.html">pinmode()</a></li>
+      <li><a href="../functions/digitalwrite.html">digitalwrite()</a></li>
+      <li><a href="../functions/analogwrite.html">analogwrite()</a></li>
+      <li><a href="../functions/delay.html">delay()</a></li>
+    </ul>
+    <h2 data-i18n="common.sec.example" data-i18n-heading="true">Example use case · उदाहरण</h2>
+    <p><strong data-i18n="exampleTitle">Forward for 2 seconds</strong> — <span data-i18n="exampleDesc">Robot drives forward then stops.</span></p>
+    <pre data-i18n-code="code">const int ENA = 5, IN1 = 7, IN2 = 8;
+
+void setup() {
+  pinMode(ENA, OUTPUT);
+  pinMode(IN1, OUTPUT);
+  pinMode(IN2, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);
+  analogWrite(ENA, 200);
+  delay(2000);
+  analogWrite(ENA, 0);
+  delay(1000);
+}</pre>
+    <h2 data-i18n="common.sec.related" data-i18n-heading="true">Related components</h2>
+    <ul class="pill-list">
+      <li><a href="../components/relay.html">Relay</a></li>
+      <li><a href="../components/servo-motor.html">Servo Motor</a></li>
+    </ul>
+    <a class="back-link" href="../index.html#components"><span data-i18n="common.sec.backComponents">← All components</span></a>
+  </main>
+  <div id="site-footer"></div>
+  <script src="../js/i18n-data.js"></script>
+  <script src="../js/i18n.js"></script>
+  <script src="../js/layout.js"></script>
+</body>
+</html>

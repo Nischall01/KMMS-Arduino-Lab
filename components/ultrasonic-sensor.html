@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ultrasonic Sensor (HC-SR04) | अल्ट्रासोनिक सेन्सर</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body data-page="components" data-page-id="ultrasonic-sensor">
+  <div id="site-header"></div>
+  <main>
+    <nav id="breadcrumbs" class="breadcrumbs" data-trail='[{"label":"Home","href":"index.html"},{"label":"Components","href":"index.html#components"},{"label":"Ultrasonic Sensor (HC-SR04)"}]'></nav>
+    <div class="component-hero">
+      <div class="component-img-wrap">
+        <img src="../assets/images/components/ultrasonic_sensor.jpg" alt="Ultrasonic Sensor (HC-SR04)">
+      </div>
+      <div>
+        Ultrasonic Sensor (HC-SR04)</h1>
+    <span class="label-ne" data-i18n-ne="h1">अल्ट्रासोनिक सेन्सर</span>
+        <p data-i18n="intro">Measures distance by sending ultrasonic pulses and timing the echo. Range roughly 2 cm–400 cm.</p>
+      </div>
+    </div>
+    <h2 data-i18n="common.sec.whatItDoes" data-i18n-heading="true">What it does · के गर्छ</h2>
+    <p data-i18n="intro">Measures distance by sending ultrasonic pulses and timing the echo. Range roughly 2 cm–400 cm.</p>
+    <h2 data-i18n="common.sec.pins" data-i18n-heading="true">Pins on the component · कम्पोनेन्टका पिन</h2>
+    <table><thead><tr><th>Pin</th><th>Type</th><th>Role</th></tr></thead><tbody><tr><td>VCC</td><td>Power</td><td>5 V</td></tr><tr><td>GND</td><td>Ground</td><td>—</td></tr><tr><td>Trig</td><td>Input</td><td>Trigger pulse</td></tr><tr><td>Echo</td><td>Output</td><td>Echo pulse length</td></tr></tbody></table>
+    <h2 data-i18n="common.sec.connect" data-i18n-heading="true">Connect to Arduino Uno · UNO मा जडान</h2>
+    <p>Example wiring (you may use other pins if you update the code). See <a href="../uno.html">Uno pinout</a>.</p>
+    <figure class="wiring-diagram">
+      <img src="../assets/images/connections/Uno_Ultrasonic.svg" alt="Fritzing diagram: Arduino Uno and HC-SR04 ultrasonic sensor" loading="lazy">
+    </figure>
+    <table><thead><tr><th>Component</th><th>Arduino Uno</th><th>Why</th></tr></thead><tbody><tr><td>VCC</td><td><code>5V</code></td><td>Sensor power</td></tr><tr><td>GND</td><td><code>GND</code></td><td>Ground</td></tr><tr><td>Trig</td><td><code>D2</code></td><td><code>digitalWrite</code> sends 10 µs pulse</td></tr><tr><td>Echo</td><td><code>D3</code></td><td><code>pulseIn</code> measures echo time</td></tr></tbody></table>
+    <figure class="wiring-diagram">
+      <img src="../assets/images/connections/Uno_Ultrasonic_Buzzer.svg" alt="Fritzing diagram: ultrasonic sensor with buzzer alarm" loading="lazy">
+    </figure>
+    <figure class="wiring-diagram">
+      <img src="../assets/images/connections/Uno_Smart_Stick_Setup.svg" alt="Fritzing diagram: smart stick project wiring" loading="lazy">
+    </figure>
+    <div class="callout" data-i18n-html="tipCallout"></div>
+    <h2 data-i18n="common.sec.codeNeed" data-i18n-heading="true">Arduino code you need · आवश्यक कोड</h2>
+    <ul class="pill-list">
+      <li><a href="../functions/pinmode.html">pinmode()</a></li>
+      <li><a href="../functions/digitalwrite.html">digitalwrite()</a></li>
+      <li><a href="../functions/pulsein.html">pulsein()</a></li>
+      <li><a href="../functions/delay.html">delay()</a></li>
+      <li><a href="../functions/millis.html">millis()</a></li>
+      <li><a href="../classes/newping.html">NewPing class</a></li>
+    </ul>
+    <h2 data-i18n="common.sec.example" data-i18n-heading="true">Example use case · उदाहरण</h2>
+    <p><strong data-i18n="exampleTitle">Back-up alarm</strong> — <span data-i18n="exampleDesc">Beep buzzer when distance is less than 15 cm.</span></p>
+    <pre data-i18n-code="code">const int trigPin = 2, echoPin = 3;
+
+void setup() {
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+}
+
+void loop() {
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+  long cm = pulseIn(echoPin, HIGH) / 58;
+  if (cm > 0 && cm < 15) tone(5, 1000, 200);
+  delay(100);
+}</pre>
+    <h2 data-i18n="common.sec.related" data-i18n-heading="true">Related components</h2>
+    <ul class="pill-list">
+      <li><a href="../components/buzzer.html">Buzzer</a></li>
+      <li><a href="../components/ir-sensor.html">IR Sensor</a></li>
+    </ul>
+    <a class="back-link" href="../index.html#components"><span data-i18n="common.sec.backComponents">← All components</span></a>
+  </main>
+  <div id="site-footer"></div>
+  <script src="../js/i18n-data.js"></script>
+  <script src="../js/i18n.js"></script>
+  <script src="../js/layout.js"></script>
+</body>
+</html>

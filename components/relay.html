@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relay Module | रिले मोड्युल</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body data-page="components" data-page-id="relay">
+  <div id="site-header"></div>
+  <main>
+    <nav id="breadcrumbs" class="breadcrumbs" data-trail='[{"label":"Home","href":"index.html"},{"label":"Components","href":"index.html#components"},{"label":"Relay Module"}]'></nav>
+    <div class="component-hero">
+      <div class="component-img-wrap">
+        <img src="../assets/images/components/relay.jpg" alt="Relay Module">
+      </div>
+      <div>
+        Relay Module</h1>
+    <span class="label-ne" data-i18n-ne="h1">रिले मोड्युल</span>
+        <p data-i18n="intro">An electrically operated switch. The Arduino controls a small coil; the relay contacts switch high-power loads (lamps, pumps, second motors).</p>
+      </div>
+    </div>
+    <h2 data-i18n="common.sec.whatItDoes" data-i18n-heading="true">What it does · के गर्छ</h2>
+    <p data-i18n="intro">An electrically operated switch. The Arduino controls a small coil; the relay contacts switch high-power loads (lamps, pumps, second motors).</p>
+    <h2 data-i18n="common.sec.pins" data-i18n-heading="true">Pins on the component · कम्पोनेन्टका पिन</h2>
+    <table><thead><tr><th>Pin</th><th>Type</th><th>Role</th></tr></thead><tbody><tr><td>IN / S</td><td>Signal</td><td>Control from Arduino</td></tr><tr><td>VCC</td><td>Power</td><td>5 V for module</td></tr><tr><td>GND</td><td>Ground</td><td>Common ground</td></tr><tr><td>COM, NO, NC</td><td>Contacts</td><td>Switch high-voltage load (teacher supervision)</td></tr></tbody></table>
+    <h2 data-i18n="common.sec.connect" data-i18n-heading="true">Connect to Arduino Uno · UNO मा जडान</h2>
+    <p>Example wiring (you may use other pins if you update the code). See <a href="../uno.html">Uno pinout</a>.</p>
+    <table><thead><tr><th>Component</th><th>Arduino Uno</th><th>Why</th></tr></thead><tbody><tr><td>IN</td><td><code>D4</code></td><td><code>digitalWrite</code> turns relay ON/OFF</td></tr><tr><td>VCC</td><td><code>5V</code></td><td>Powers relay board electronics</td></tr><tr><td>GND</td><td><code>GND</code></td><td>Shared ground</td></tr></tbody></table>
+    <div class="callout callout-warning" data-i18n-html="hazardCallout"></div>
+    <h2 data-i18n="common.sec.codeNeed" data-i18n-heading="true">Arduino code you need · आवश्यक कोड</h2>
+    <ul class="pill-list">
+      <li><a href="../functions/pinmode.html">pinmode()</a></li>
+      <li><a href="../functions/digitalwrite.html">digitalwrite()</a></li>
+    </ul>
+    <h2 data-i18n="common.sec.example" data-i18n-heading="true">Example use case · उदाहरण</h2>
+    <p><strong data-i18n="exampleTitle">Timer-controlled lamp</strong> — <span data-i18n="exampleDesc">Turn a desk lamp on for 10 seconds via relay, then off.</span></p>
+    <pre data-i18n-code="code">const int relayPin = 4;
+
+void setup() {
+  pinMode(relayPin, OUTPUT);
+  digitalWrite(relayPin, LOW);  // many modules: LOW = ON
+}
+
+void loop() {
+  digitalWrite(relayPin, LOW);
+  delay(10000);
+  digitalWrite(relayPin, HIGH);
+  delay(5000);
+}</pre>
+    <h2 data-i18n="common.sec.related" data-i18n-heading="true">Related components</h2>
+    <ul class="pill-list">
+      <li><a href="../components/dc-motor-l298n.html">DC Motor + L298N</a></li>
+      <li><a href="../components/builtin-led.html">Built-in LED</a></li>
+    </ul>
+    <a class="back-link" href="../index.html#components"><span data-i18n="common.sec.backComponents">← All components</span></a>
+  </main>
+  <div id="site-footer"></div>
+  <script src="../js/i18n-data.js"></script>
+  <script src="../js/i18n.js"></script>
+  <script src="../js/layout.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>analogWrite() | एनालग लेख्नुहोस् (PWM)</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body data-page="functions" data-page-id="analogwrite">
+  <div id="site-header"></div>
+  <main>
+    <nav id="breadcrumbs" class="breadcrumbs" data-trail='[{"label":"Home","href":"index.html"},{"label":"Functions","href":"index.html#functions"},{"label":"analogWrite()"}]'></nav>
+    <span class="metaphor" data-i18n="metaphor">Control intensity · तीव्रता नियन्त्रण</span>
+    <h1 data-i18n="h1">analogWrite()</h1>
+    <span class="label-ne" data-i18n-ne="labelNe">एनालग लेख्नुहोस् (PWM)</span>
+    <p data-i18n="desc">Outputs PWM on digital pins marked ~ — not true analog, but fast ON/OFF pulses that control brightness or motor speed (0–255).</p>
+    <h2 data-i18n="common.sec.syntax" data-i18n-heading="true">Syntax</h2>
+    <pre>analogWrite(pin, value);</pre>
+    <h2 data-i18n="common.sec.parameters" data-i18n-heading="true">Parameters</h2>
+    <table><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td><code>pin</code></td><td>PWM pin: 3, 5, 6, 9, 10, 11 on Uno</td></tr><tr><td><code>value</code></td><td>0 (off) to 255 (full)</td></tr></tbody></table>
+    <h2 data-i18n="common.sec.returns" data-i18n-heading="true">Returns</h2>
+    <p>Nothing (void).</p>
+    <h2 data-i18n="common.sec.whenUse" data-i18n-heading="true">When to use</h2>
+    <ul><li>LED brightness</li><li>L298N ENA speed control</li><li>Soft buzzer volume (with PWM buzzer)</li></ul>
+    <h2 data-i18n="common.sec.mistakes" data-i18n-heading="true">Common mistakes</h2>
+    <div class="callout callout-warning" data-i18n-html="mistakes"><strong>PWM pins only</strong> On Uno: D3, D5, D6, D9, D10, D11. See <a href="../uno.html">pinout</a>.</div>
+    <h2 data-i18n="common.sec.exampleShort" data-i18n-heading="true">Example</h2>
+    <pre>analogWrite(5, 128);  // half speed on ENA</pre>
+    <h2 data-i18n="common.sec.seeAlso" data-i18n-heading="true">See also</h2>
+    <ul class="pill-list">
+      <li><a href="digitalwrite.html">digitalWrite()</a></li>
+      <li><a href="pinmode.html">pinMode()</a></li>
+    </ul>
+    <h2 data-i18n="common.sec.usedBy" data-i18n-heading="true">Used by components</h2>
+    <ul class="pill-list">
+      <li><a href="../components/dc-motor-l298n.html">DC Motor + L298N</a></li>
+      <li><a href="../components/leds.html">LEDs</a></li>
+    </ul>
+    <a class="back-link" href="../index.html#functions"><span data-i18n="common.sec.backFunctions">← All functions</span></a>
+  </main>
+  <div id="site-footer"></div>
+  <script src="../js/i18n-data.js"></script>
+  <script src="../js/i18n.js"></script>
+  <script src="../js/layout.js"></script>
+</body>
+</html>

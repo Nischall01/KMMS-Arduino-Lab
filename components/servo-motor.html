@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servo Motor | सर्वो मोटर</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body data-page="components" data-page-id="servo-motor">
+  <div id="site-header"></div>
+  <main>
+    <nav id="breadcrumbs" class="breadcrumbs" data-trail='[{"label":"Home","href":"index.html"},{"label":"Components","href":"index.html#components"},{"label":"Servo Motor"}]'></nav>
+    <div class="component-hero">
+      <div class="component-img-wrap">
+        <img src="../assets/images/components/servo_motor.jpg" alt="Servo Motor">
+      </div>
+      <div>
+        Servo Motor</h1>
+    <span class="label-ne" data-i18n-ne="h1">सर्वो मोटर</span>
+        <p data-i18n="intro">A motor that rotates to a precise angle (usually 0°–180°), used in robot arms, gates, and camera mounts.</p>
+      </div>
+    </div>
+    <h2 data-i18n="common.sec.whatItDoes" data-i18n-heading="true">What it does · के गर्छ</h2>
+    <p data-i18n="intro">A motor that rotates to a precise angle (usually 0°–180°), used in robot arms, gates, and camera mounts.</p>
+    <h2 data-i18n="common.sec.pins" data-i18n-heading="true">Pins on the component · कम्पोनेन्टका पिन</h2>
+    <table><thead><tr><th>Pin</th><th>Type</th><th>Role</th></tr></thead><tbody><tr><td>Signal (orange/yellow)</td><td>PWM signal</td><td>Angle command</td></tr><tr><td>VCC (red)</td><td>Power</td><td>5 V supply</td></tr><tr><td>GND (brown/black)</td><td>Ground</td><td>Common ground with Uno</td></tr></tbody></table>
+    <h2 data-i18n="common.sec.connect" data-i18n-heading="true">Connect to Arduino Uno · UNO मा जडान</h2>
+    <p>Example wiring (you may use other pins if you update the code). See <a href="../uno.html">Uno pinout</a>.</p>
+    <figure class="wiring-diagram">
+      <img src="../assets/images/connections/Uno_ServoMotorSG90.svg" alt="Fritzing diagram: Arduino Uno and SG90 servo motor" loading="lazy">
+    </figure>
+    <table><thead><tr><th>Component</th><th>Arduino Uno</th><th>Why</th></tr></thead><tbody><tr><td>Signal</td><td><code>D6</code> (PWM ~)</td><td>Servo library sends control pulses on a PWM-capable pin</td></tr><tr><td>VCC</td><td><code>5V</code></td><td>Powers the servo (use external 5 V if many servos draw high current)</td></tr><tr><td>GND</td><td><code>GND</code></td><td>Shared ground reference</td></tr></tbody></table>
+    <div class="callout callout-warning" data-i18n-html="powerCallout"></div>
+    <h2 data-i18n="common.sec.codeNeed" data-i18n-heading="true">Arduino code you need · आवश्यक कोड</h2>
+    <ul class="pill-list">
+      <li><a href="../classes/servo.html">Servo class</a></li>
+      <li><a href="../functions/pinmode.html">pinmode()</a></li>
+    </ul>
+    <h2 data-i18n="common.sec.example" data-i18n-heading="true">Example use case · उदाहरण</h2>
+    <p><strong data-i18n="exampleTitle">Sweep 0° to 180°</strong> — <span data-i18n="exampleDesc">Move a robot arm back and forth smoothly.</span></p>
+    <pre data-i18n-code="code">#include <Servo.h>
+Servo myServo;
+
+void setup() {
+  myServo.attach(6);
+}
+
+void loop() {
+  myServo.write(0);
+  delay(500);
+  myServo.write(180);
+  delay(500);
+}</pre>
+    <h2 data-i18n="common.sec.related" data-i18n-heading="true">Related components</h2>
+    <ul class="pill-list">
+      <li><a href="../components/dc-motor-l298n.html">DC Motor + L298N</a></li>
+      <li><a href="../components/potentiometer.html">Potentiometer</a></li>
+    </ul>
+    <a class="back-link" href="../index.html#components"><span data-i18n="common.sec.backComponents">← All components</span></a>
+  </main>
+  <div id="site-footer"></div>
+  <script src="../js/i18n-data.js"></script>
+  <script src="../js/i18n.js"></script>
+  <script src="../js/layout.js"></script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KMSS Arduino Lab</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="home" data-page-id="index">
+  <div id="site-header"></div>
+  <main>
+    <section class="hero">
+      <h1 data-i18n="heroTitle">KMSS Arduino Lab</h1>
+      <span class="label-ne" data-i18n-ne="heroTitle">KMSS Arduino प्रयोगशाला</span>
+      <p class="lead" data-i18n="heroLead">
+        Learn how robotics and electronic parts connect to the Arduino Uno — the brain of your project.
+        Browse components, wiring guides, Arduino functions, and library classes.
+      </p>
+      <p>
+        <a href="uno.html" data-i18n="heroLink">View Arduino Uno pinout →</a>
+      </p>
+      <p class="hero-credit" data-i18n="heroCredit">By Nischall</p>
+    </section>
+
+    <label for="search" class="visually-hidden">Search</label>
+    <input type="search" id="search" class="search-box" data-i18n="searchPlaceholder" placeholder="Search (English or Nepali)…" autocomplete="off">
+
+    <h2 id="components" class="section-title" data-i18n="secComponents" data-i18n-heading="true">Components · कम्पोनेन्टहरू</h2>
+    <div class="card-grid" id="grid-components">
+      <article class="card" data-keywords="builtin led अन्तर्निर्मित" data-i18n-card="builtin-led">
+        <a href="components/builtin-led.html">
+          <div class="card-thumb"><img src="assets/images/components/builtin_led.jpg" alt=""></div>
+          <div class="card-body">
+            <h3 data-i18n-slot="title">Built-in LED</h3>
+            <span class="card-ne">अन्तर्निर्मित LED</span>
+            <p data-i18n-slot="desc">Onboard LED on pin D13 — your first blink project.</p>
+          </div>
+        </a>
+      </article>
+      <article class="card" data-keywords="servo motor सर्वो" data-i18n-card="servo-motor">
+        <a href="components/servo-motor.html">
+          <div class="card-thumb"><img src="assets/images/components/servo_motor.jpg" alt=""></div>
+          <div class="card-body">
+            <h3 data-i18n-slot="title">Servo Motor</h3>
+            <span class="card-ne">सर्वो मोटर</span>
+            <p data-i18n-slot="desc">Precise angle control for robot arms and gates.</p>
+          </div>
+        </a>
+      </article>
+      <article class="card" data-keywords="dc motor l298n मोटर" data-i18n-card="dc-motor-l298n">
+        <a href="components/dc-motor-l298n.html">
+          <div class="card-thumb card-thumb-duo">
+            <img src="assets/images/components/dc_motor.jpg" alt="">
+            <img src="assets/images/components/l298n.jpg" alt="">
+          </div>
+          <div class="card-body">
+            <h3 data-i18n-slot="title">DC Motor + L298N</h3>
+            <span class="card-ne">DC मोटर + L298N</span>
+            <p data-i18n-slot="desc">Drive wheels and fans with a motor driver module.</p>
+          </div>
+        </a>
+      </article>
+      <article class="card" data-keywords="relay रिले" data-i18n-card="relay">
+        <a href="components/relay.html">
+          <div class="card-thumb"><img src="assets/images/components/relay.jpg" alt=""></div>
+          <div class="card-body">
+            <h3 data-i18n-slot="title">Relay</h3>
+            <span class="card-ne">रिले</span>
+            <p data-i18n-slot="desc">Switch high-power devices safely from Arduino.</p>
+          </div>
+        </a>
+      </article>
+      <article class="card" data-keywords="ir infrared sensor अवरक्त" data-i18n-card="ir-sensor">
+        <a href="components/ir-sensor.html">
+          <div class="card-thumb"><img src="assets/images/components/ir_sensor.jpg" alt=""></div>
+          <div class="card-body">
+            <h3 data-i18n-slot="title">IR Sensor</h3>
+            <span class="card-ne">IR सेन्सर</span>
+            <p data-i18n-slot="desc">Detect obstacles and line for line-following robots.</p>
+          </div>
+        </a>
+      </article>
+      <article class="card" data-keywords="ultrasonic ultrasonic दूरी" data-i18n-card="ultrasonic-sensor">
+        <a href="components/ultrasonic-sensor.html">
+          <div class="card-thumb"><img src="assets/images/components/ultrasonic_sensor.jpg" alt=""></div>
+          <div class="card-body">
+            <h3 data-i18n-slot="title">Ultrasonic Sensor</h3>
+            <span class="card-ne">अल्ट्रासोनिक सेन्सर</span>
+            <p data-i18n-slot="desc">Measure distance with sound pulses (HC-SR04).</p>
+          </div>
+        </a>
+      </article>
+      <article class="card" data-keywords="fire flame sensor आगो" data-i18n-card="fire-sensor">
+        <a href="components/fire-sensor.html">
+          <div class="card-thumb"><img src="assets/images/components/fire_sensor.jpg" alt=""></div>
+          <div class="card-body">
+            <h3 data-i18n-slot="title">Fire Sensor</h3>
+            <span class="card-ne">आगो सेन्सर</span>
+            <p data-i18n-slot="desc">Detect flame or heat for safety alarms.</p>
+          </div>
+        </a>
+      </article>
+      <article class="card" data-keywords="potentiometer पोटेन्सियोमिटर" data-i18n-card="potentiometer">
+        <a href="components/potentiometer.html">
+          <div class="card-thumb"><img src="assets/images/components/potentiometer.jpg" alt=""></div>
+          <div class="card-body">
+            <h3 data-i18n-slot="title">Potentiometer</h3>
+            <span class="card-ne">पोटेन्सियोमिटर</span>
+            <p data-i18n-slot="desc">Manual knob input — brightness or speed control.</p>
+          </div>
+        </a>
+      </article>
+      <article class="card" data-keywords="leds बत्ती" data-i18n-card="leds">
+        <a href="components/leds.html">
+          <div class="card-thumb"><img src="assets/images/components/leds.jpg" alt=""></div>
+          <div class="card-body">
+            <h3 data-i18n-slot="title">LEDs (External)</h3>
+            <span class="card-ne">बाह्य LED</span>
+            <p data-i18n-slot="desc">Extra indicator lights with a current-limiting resistor.</p>
+          </div>
+        </a>
+      </article>
+      <article class="card" data-keywords="buzzer बजर" data-i18n-card="buzzer">
+        <a href="components/buzzer.html">
+          <div class="card-thumb"><img src="assets/images/components/buzzer.jpg" alt=""></div>
+          <div class="card-body">
+            <h3 data-i18n-slot="title">Buzzer</h3>
+            <span class="card-ne">बजर</span>
+            <p data-i18n-slot="desc">Beeps and tones for alarms and feedback.</p>
+          </div>
+        </a>
+      </article>
+    </div>
+
+    <h2 id="functions" class="section-title" data-i18n="secFunctions" data-i18n-heading="true">Arduino Functions · फलनहरू</h2>
+    <div class="card-grid" id="grid-functions">
+      <article class="card" data-keywords="pinmode setup room कोठा" data-i18n-card="pinmode">
+        <a href="functions/pinmode.html"><h3 data-i18n-slot="title">pinMode()</h3><span class="card-ne">कोठा तयार पार्नुहोस्</span><p data-i18n-slot="desc">Set a pin as INPUT or OUTPUT.</p></a>
+      </article>
+      <article class="card" data-keywords="digitalwrite on off" data-i18n-card="digitalwrite">
+        <a href="functions/digitalwrite.html"><h3 data-i18n-slot="title">digitalWrite()</h3><span class="card-ne">ON/OFF गर्नुहोस्</span><p data-i18n-slot="desc">Turn a digital pin HIGH or LOW.</p></a>
+      </article>
+      <article class="card" data-keywords="digitalread switch" data-i18n-card="digitalread">
+        <a href="functions/digitalread.html"><h3 data-i18n-slot="title">digitalRead()</h3><span class="card-ne">स्विच जाँच</span><p data-i18n-slot="desc">Read HIGH or LOW from a digital pin.</p></a>
+      </article>
+      <article class="card" data-keywords="analogread measure level" data-i18n-card="analogread">
+        <a href="functions/analogread.html"><h3 data-i18n-slot="title">analogRead()</h3><span class="card-ne">स्तर मापन</span><p data-i18n-slot="desc">Read 0–1023 from analog pins A0–A5.</p></a>
+      </article>
+      <article class="card" data-keywords="analogwrite pwm intensity" data-i18n-card="analogwrite">
+        <a href="functions/analogwrite.html"><h3 data-i18n-slot="title">analogWrite()</h3><span class="card-ne">तीव्रता नियन्त्रण</span><p data-i18n-slot="desc">PWM brightness or motor speed.</p></a>
+      </article>
+      <article class="card" data-keywords="delay pause" data-i18n-card="delay">
+        <a href="functions/delay.html"><h3 data-i18n-slot="title">delay()</h3><span class="card-ne">सबै रोक्नुहोस्</span><p data-i18n-slot="desc">Pause the program for milliseconds.</p></a>
+      </article>
+      <article class="card" data-keywords="millis stopwatch" data-i18n-card="millis">
+        <a href="functions/millis.html"><h3 data-i18n-slot="title">millis()</h3><span class="card-ne">पृष्ठभूमि स्टपवाच</span><p data-i18n-slot="desc">Non-blocking time without stopping everything.</p></a>
+      </article>
+      <article class="card" data-keywords="pulsein duration ultrasonic" data-i18n-card="pulsein">
+        <a href="functions/pulsein.html"><h3 data-i18n-slot="title">pulseIn()</h3><span class="card-ne">सिग्नल अवधि</span><p data-i18n-slot="desc">Measure how long a pulse stays HIGH/LOW.</p></a>
+      </article>
+      <article class="card" data-keywords="tone sound buzzer" data-i18n-card="tone">
+        <a href="functions/tone.html"><h3 data-i18n-slot="title">tone()</h3><span class="card-ne">ध्वनि बनाउनुहोस्</span><p data-i18n-slot="desc">Play a frequency on a speaker pin.</p></a>
+      </article>
+    </div>
+
+    <h2 id="classes" class="section-title" data-i18n="secClasses" data-i18n-heading="true">Arduino Classes · कक्षाहरू</h2>
+    <div class="card-grid" id="grid-classes">
+      <article class="card" data-keywords="servo class सर्वो" data-i18n-card="servo">
+        <a href="classes/servo.html"><h3 data-i18n-slot="title">Servo</h3><span class="card-ne">Servo.h</span><p data-i18n-slot="desc">Control hobby servo motors easily.</p></a>
+      </article>
+      <article class="card" data-keywords="newping ultrasonic" data-i18n-card="newping">
+        <a href="classes/newping.html"><h3 data-i18n-slot="title">NewPing</h3><span class="card-ne">NewPing.h</span><p data-i18n-slot="desc">Simpler ultrasonic distance readings.</p></a>
+      </article>
+    </div>
+  </main>
+  <div id="site-footer"></div>
+  <script src="js/i18n-data.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/search.js"></script>
+</body>
+</html>

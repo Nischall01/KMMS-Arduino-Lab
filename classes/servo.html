@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servo Class | Servo.h कक्षा</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body data-page="classes" data-page-id="servo">
+  <div id="site-header"></div>
+  <main>
+    <nav id="breadcrumbs" class="breadcrumbs" data-trail='[{"label":"Home","href":"index.html"},{"label":"Classes","href":"index.html#classes"},{"label":"Servo Class"}]'></nav>
+    <h1 data-i18n="h1">Servo Class</h1>
+    <span class="label-ne" data-i18n-ne="labelNe">Servo.h कक्षा</span>
+    <p data-i18n="intro">Built-in Arduino library for hobby servos. Sends correct PWM pulses so you can set angles with <code>write()</code> instead of raw timing.</p>
+    <h2 data-i18n="common.sec.installLib" data-i18n-heading="true">Install library · लाइब्रेरी स्थापना</h2>
+    <p data-i18n="install">Arduino IDE → <strong>Sketch → Include Library → Servo</strong> (built-in, no install needed).</p>
+    <h2 data-i18n="common.sec.methods" data-i18n-heading="true">Methods · विधिहरू</h2>
+    <table><thead><tr><th>Method</th><th>Description</th></tr></thead><tbody>
+  <tr><td><code>attach(pin)</code></td><td>Connect servo signal to pin (e.g. 6)</td></tr>
+  <tr><td><code>write(angle)</code></td><td>Move to 0–180 degrees</td></tr>
+  <tr><td><code>read()</code></td><td>Last written angle</td></tr>
+  <tr><td><code>detach()</code></td><td>Release pin</td></tr>
+  </tbody></table>
+    <h2 data-i18n="common.sec.wiring" data-i18n-heading="true">Wiring to Uno · जडान</h2>
+    <p>Signal → PWM pin <code>D6</code>, VCC → <code>5V</code>, GND → <code>GND</code>. See <a href="../components/servo-motor.html">Servo Motor component</a>.</p>
+    <h2 data-i18n="common.sec.example" data-i18n-heading="true">Example · उदाहरण</h2>
+    <pre>#include <Servo.h>
+Servo s;
+void setup() { s.attach(6); }
+void loop() {
+  s.write(45);
+  delay(1000);
+  s.write(135);
+  delay(1000);
+}</pre>
+    <h2 data-i18n="common.sec.related" data-i18n-heading="true">Related</h2>
+    <ul class="pill-list">
+      <li><a href="../components/servo-motor.html">Servo Motor</a></li>
+      <li><a href="../functions/pinmode.html">pinMode()</a></li>
+    </ul>
+    <a class="back-link" href="../index.html#classes"><span data-i18n="common.sec.backClasses">← All classes</span></a>
+  </main>
+  <div id="site-footer"></div>
+  <script src="../js/i18n-data.js"></script>
+  <script src="../js/i18n.js"></script>
+  <script src="../js/layout.js"></script>
+</body>
+</html>

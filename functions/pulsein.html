@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pulseIn() | पल्स मापन</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body data-page="functions" data-page-id="pulsein">
+  <div id="site-header"></div>
+  <main>
+    <nav id="breadcrumbs" class="breadcrumbs" data-trail='[{"label":"Home","href":"index.html"},{"label":"Functions","href":"index.html#functions"},{"label":"pulseIn()"}]'></nav>
+    <span class="metaphor" data-i18n="metaphor">Measure signal duration · सिग्नल अवधि</span>
+    <h1 data-i18n="h1">pulseIn()</h1>
+    <span class="label-ne" data-i18n-ne="labelNe">पल्स मापन</span>
+    <p data-i18n="desc">Measures how long a pin stays HIGH or LOW in microseconds — used to calculate distance from ultrasonic Echo pin.</p>
+    <h2 data-i18n="common.sec.syntax" data-i18n-heading="true">Syntax</h2>
+    <pre>unsigned long us = pulseIn(pin, value, timeout);</pre>
+    <h2 data-i18n="common.sec.parameters" data-i18n-heading="true">Parameters</h2>
+    <table><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td><code>pin</code></td><td>Pin to read</td></tr><tr><td><code>value</code></td><td>HIGH or LOW to measure</td></tr><tr><td><code>timeout</code></td><td>Optional max wait (μs)</td></tr></tbody></table>
+    <h2 data-i18n="common.sec.returns" data-i18n-heading="true">Returns</h2>
+    <p>Pulse length in microseconds (0 if timeout).</p>
+    <h2 data-i18n="common.sec.whenUse" data-i18n-heading="true">When to use</h2>
+    <ul><li>HC-SR04 ultrasonic Echo</li><li>PWM input decoding (advanced)</li></ul>
+    <h2 data-i18n="common.sec.mistakes" data-i18n-heading="true">Common mistakes</h2>
+    <div class="callout"><strong>Distance formula</strong> cm ≈ pulseIn(Echo, HIGH) / 58.0 for HC-SR04. Or use <a href="../classes/newping.html">NewPing</a> library.</div>
+    <h2 data-i18n="common.sec.exampleShort" data-i18n-heading="true">Example</h2>
+    <pre>digitalWrite(trigPin, HIGH);
+delayMicroseconds(10);
+digitalWrite(trigPin, LOW);
+long d = pulseIn(echoPin, HIGH) / 58;</pre>
+    <h2 data-i18n="common.sec.seeAlso" data-i18n-heading="true">See also</h2>
+    <ul class="pill-list">
+      <li><a href="digitalwrite.html">digitalWrite()</a></li>
+      <li><a href="delay.html">delay()</a></li>
+      <li><a href="../classes/newping.html">NewPing class</a></li>
+    </ul>
+    <h2 data-i18n="common.sec.usedBy" data-i18n-heading="true">Used by components</h2>
+    <ul class="pill-list">
+      <li><a href="../components/ultrasonic-sensor.html">Ultrasonic Sensor</a></li>
+    </ul>
+    <a class="back-link" href="../index.html#functions"><span data-i18n="common.sec.backFunctions">← All functions</span></a>
+  </main>
+  <div id="site-footer"></div>
+  <script src="../js/i18n-data.js"></script>
+  <script src="../js/i18n.js"></script>
+  <script src="../js/layout.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>analogRead() | एनालग पढ्नुहोस्</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body data-page="functions" data-page-id="analogread">
+  <div id="site-header"></div>
+  <main>
+    <nav id="breadcrumbs" class="breadcrumbs" data-trail='[{"label":"Home","href":"index.html"},{"label":"Functions","href":"index.html#functions"},{"label":"analogRead()"}]'></nav>
+    <span class="metaphor" data-i18n="metaphor">Measure level · स्तर मापन</span>
+    <h1 data-i18n="h1">analogRead()</h1>
+    <span class="label-ne" data-i18n-ne="labelNe">एनालग पढ्नुहोस्</span>
+    <p data-i18n="desc">Reads voltage on analog pins A0–A5 as a number from 0 (0 V) to 1023 (5 V) — like measuring how far a knob is turned.</p>
+    <h2 data-i18n="common.sec.syntax" data-i18n-heading="true">Syntax</h2>
+    <pre>int value = analogRead(pin);</pre>
+    <h2 data-i18n="common.sec.parameters" data-i18n-heading="true">Parameters</h2>
+    <table><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td><code>pin</code></td><td>A0–A5 (or A0, A1, … constants)</td></tr></tbody></table>
+    <h2 data-i18n="common.sec.returns" data-i18n-heading="true">Returns</h2>
+    <p>Integer 0–1023.</p>
+    <h2 data-i18n="common.sec.whenUse" data-i18n-heading="true">When to use</h2>
+    <ul><li>Potentiometer position</li><li>Fire sensor analog output</li><li>Light or gas sensors with analog OUT</li></ul>
+    <h2 data-i18n="common.sec.mistakes" data-i18n-heading="true">Common mistakes</h2>
+    <div class="callout"><strong>ध्यान</strong> Only pins A0–A5 are true analog inputs on Uno. Reference is 5 V by default.</div>
+    <h2 data-i18n="common.sec.exampleShort" data-i18n-heading="true">Example</h2>
+    <pre>int pot = analogRead(A1);
+int percent = map(pot, 0, 1023, 0, 100);</pre>
+    <h2 data-i18n="common.sec.seeAlso" data-i18n-heading="true">See also</h2>
+    <ul class="pill-list">
+      <li><a href="analogwrite.html">analogWrite()</a></li>
+      <li><a href="digitalread.html">digitalRead()</a></li>
+    </ul>
+    <h2 data-i18n="common.sec.usedBy" data-i18n-heading="true">Used by components</h2>
+    <ul class="pill-list">
+      <li><a href="../components/potentiometer.html">Potentiometer</a></li>
+      <li><a href="../components/fire-sensor.html">Fire Sensor</a></li>
+    </ul>
+    <a class="back-link" href="../index.html#functions"><span data-i18n="common.sec.backFunctions">← All functions</span></a>
+  </main>
+  <div id="site-footer"></div>
+  <script src="../js/i18n-data.js"></script>
+  <script src="../js/i18n.js"></script>
+  <script src="../js/layout.js"></script>
+</body>
+</html>
