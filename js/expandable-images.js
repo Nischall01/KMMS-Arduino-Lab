@@ -1,6 +1,6 @@
 (function () {
   var SELECTORS =
-    ".component-img-wrap img, .card-thumb img, .wiring-diagram img, .uno-visual img, .hero-uno img";
+    ".component-img-wrap img, .wiring-diagram img, .uno-visual img, .hero-uno img";
   var overlay;
 
   function ensureOverlay() {
