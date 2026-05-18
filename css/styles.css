@@ -943,6 +943,88 @@ code {
   object-fit: contain;
 }
 
+.img-expandable {
+  cursor: zoom-in;
+  transition: opacity 0.15s ease;
+}
+
+.img-expandable:hover {
+  opacity: 0.92;
+}
+
+.img-expandable:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 3px;
+}
+
+.img-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: rgba(15, 24, 26, 0.88);
+  backdrop-filter: blur(4px);
+}
+
+.img-lightbox[hidden] {
+  display: none !important;
+}
+
+.img-lightbox-inner {
+  margin: 0;
+  max-width: min(960px, 96vw);
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.img-lightbox-inner img {
+  max-width: min(960px, 96vw);
+  max-height: calc(90vh - 3rem);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: var(--radius);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+  background: #fff;
+}
+
+.img-lightbox-inner figcaption {
+  margin: 0;
+  color: #e8f4f5;
+  font-size: 0.9rem;
+  text-align: center;
+  max-width: 40rem;
+}
+
+.img-lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  border: none;
+  border-radius: 8px;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.img-lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+body.lightbox-open {
+  overflow: hidden;
+}
+
 .component-img-wrap.placeholder::after {
   content: "Add component_name.jpg";
   font-size: 0.75rem;

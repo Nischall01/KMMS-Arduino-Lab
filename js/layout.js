@@ -192,6 +192,14 @@
     }
   });
 
+  (function loadExpandableImages() {
+    if (window.__expandableImagesLoaded) return;
+    window.__expandableImagesLoaded = true;
+    var s = document.createElement("script");
+    s.src = prefix + "js/expandable-images.js";
+    document.body.appendChild(s);
+  })();
+
   (function loadCodeBlocks() {
     if (window.__codeBlocksLoaded) return;
     window.__codeBlocksLoaded = true;
