@@ -107,7 +107,7 @@
     if (brand) brand.textContent = textFor(ui.siteTitle, lang, null) || brand.textContent;
     if (brandSub) brandSub.textContent = textFor(ui.siteSubtitle, lang, null) || brandSub.textContent;
     var navLinks = document.querySelectorAll(".site-nav a");
-    var navKeys = ["navHome", "navUno", "navComponents", "navFunctions", "navClasses"];
+    var navKeys = ["navHome", "navUno", "navReference", "navComponents", "navFunctions", "navClasses"];
     navLinks.forEach(function (a, idx) {
       if (ui[navKeys[idx]]) {
         var t = textFor(ui[navKeys[idx]], lang, null);

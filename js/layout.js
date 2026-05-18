@@ -11,6 +11,7 @@
   var prefix = depth === 0 ? "" : "../";
   var home = prefix + "index.html";
   var uno = prefix + "uno.html";
+  var reference = prefix + "reference.html";
   var componentsIndex = prefix + "index.html#components";
   var functionsIndex = prefix + "index.html#functions";
   var classesIndex = prefix + "index.html#classes";
@@ -18,8 +19,28 @@
   var lang = window.I18n ? window.I18n.getLang() : "mixed";
   var ui = window.I18N_UI || {};
 
+  function activeNavId() {
+    if (page === "home" || page === "uno" || page === "reference") {
+      return page;
+    }
+    return null;
+  }
+
   function navClass(id) {
-    return page === id ? " active" : "";
+    return activeNavId() === id ? " active" : "";
+  }
+
+  function setActiveNav() {
+    var activeId = activeNavId();
+    document.querySelectorAll(".site-nav a[data-nav]").forEach(function (a) {
+      var isActive = activeId !== null && a.getAttribute("data-nav") === activeId;
+      a.classList.toggle("active", isActive);
+      if (isActive) {
+        a.setAttribute("aria-current", "page");
+      } else {
+        a.removeAttribute("aria-current");
+      }
+    });
   }
 
   function lbl(key, fallback) {
@@ -61,35 +82,42 @@
     '<nav class="site-nav" aria-label="Main">' +
     '<a href="' +
     home +
-    '"' +
+    '" data-nav="home"' +
     navClass("home") +
     ">" +
     lbl("navHome", "Home") +
     "</a>" +
     '<a href="' +
     uno +
-    '"' +
+    '" data-nav="uno"' +
     navClass("uno") +
     ">" +
     lbl("navUno", "Uno") +
     "</a>" +
     '<a href="' +
+    reference +
+    '" data-nav="reference"' +
+    navClass("reference") +
+    ">" +
+    lbl("navReference", "Reference") +
+    "</a>" +
+    '<a href="' +
     componentsIndex +
-    '"' +
+    '" data-nav="components"' +
     navClass("components") +
     ">" +
     lbl("navComponents", "Components") +
     "</a>" +
     '<a href="' +
     functionsIndex +
-    '"' +
+    '" data-nav="functions"' +
     navClass("functions") +
     ">" +
     lbl("navFunctions", "Functions") +
     "</a>" +
     '<a href="' +
     classesIndex +
-    '"' +
+    '" data-nav="classes"' +
     navClass("classes") +
     ">" +
     lbl("navClasses", "Classes") +
@@ -123,6 +151,8 @@
   var footerEl = document.getElementById("site-footer");
   if (headerEl) headerEl.innerHTML = headerHtml;
   if (footerEl) footerEl.innerHTML = footerHtml;
+
+  setActiveNav();
 
   document.querySelectorAll(".lang-btn").forEach(function (btn) {
     btn.addEventListener("click", function () {
@@ -161,4 +191,37 @@
       img.dispatchEvent(new Event("error"));
     }
   });
+
+  (function loadCodeBlocks() {
+    if (window.__codeBlocksLoaded) return;
+    window.__codeBlocksLoaded = true;
+    var files = ["code-explanations.js", "code-blocks.js"];
+    var i = 0;
+    function next() {
+      if (i >= files.length) return;
+      var s = document.createElement("script");
+      s.src = prefix + "js/" + files[i++];
+      s.onload = next;
+      document.body.appendChild(s);
+    }
+    next();
+  })();
+
+  (function loadComponentWiring() {
+    if (page !== "components") return;
+    if (!document.body.getAttribute("data-page-id")) return;
+    if (!document.getElementById("component-wiring-table")) return;
+    if (window.__componentWiringLoaded) return;
+    window.__componentWiringLoaded = true;
+    var files = ["reference-data.js", "wiring.js", "component-wiring.js"];
+    var j = 0;
+    function nextWiring() {
+      if (j >= files.length) return;
+      var s = document.createElement("script");
+      s.src = prefix + "js/" + files[j++];
+      s.onload = nextWiring;
+      document.body.appendChild(s);
+    }
+    nextWiring();
+  })();
 })();

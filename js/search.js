@@ -11,5 +11,9 @@
       var match = !q || text.indexOf(q) !== -1 || data.indexOf(q) !== -1;
       card.classList.toggle("hidden", !match);
     });
+    document.querySelectorAll(".ref-table tbody tr").forEach(function (row) {
+      var match = !q || row.textContent.toLowerCase().indexOf(q) !== -1;
+      row.classList.toggle("hidden", !match);
+    });
   });
 })();

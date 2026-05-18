@@ -29,6 +29,20 @@ module.exports = {
       newping: { title: "NewPing", ne: "NewPing.h", desc: { en: "Simpler ultrasonic distance readings.", ne: "अल्ट्रासोनिक दूरी सजिलो।" } },
     },
   },
+  reference: {
+    lead: {
+      en: "Lookup tables for components, wiring pins, Arduino functions, and library classes.",
+      ne: "कम्पोनेन्ट, जडान पिन, Arduino फलन र लाइब्रेरी कक्षाका सार तालिका।",
+    },
+    searchPlaceholder: {
+      en: "Search tables (English or Nepali)…",
+      ne: "तालिका खोज्नुहोस्…",
+    },
+    secComponents: { en: "Components", ne: "कम्पोनेन्टहरू" },
+    secFunctions: { en: "Arduino Functions", ne: "Arduino फलनहरू" },
+    secClasses: { en: "Arduino Classes", ne: "Arduino कक्षाहरू" },
+    backHome: { en: "← Back to home", ne: "← गृह पृष्ठ" },
+  },
   uno: {
     lead: {
       en: "The Uno is the <strong>brain</strong> of your system. Every component connects to specific pins for power, ground, and signals.",

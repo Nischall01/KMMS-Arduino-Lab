@@ -7,6 +7,7 @@ window.I18N_UI = {
   },
   navHome: { en: "Home", ne: "गृह" },
   navUno: { en: "Uno", ne: "UNO" },
+  navReference: { en: "Reference", ne: "सार तालिका" },
   navComponents: { en: "Components", ne: "कम्पोनेन्ट" },
   navFunctions: { en: "Functions", ne: "फलन" },
   navClasses: { en: "Classes", ne: "कक्षा" },
@@ -166,6 +167,10 @@ window.I18N = {
     "heroLink": {
       "en": "View Arduino Uno pinout →",
       "ne": "Arduino UNO पिन आरेख हेर्नुहोस् →"
+    },
+    "heroRefLink": {
+      "en": "Quick reference tables →",
+      "ne": "सार तालिका हेर्नुहोस् →"
     },
     "heroCredit": {
       "en": "By Nischall",
@@ -380,6 +385,40 @@ window.I18N = {
           "ne": "अल्ट्रासोनिक दूरी सजिलो।"
         }
       }
+    }
+  },
+  "reference": {
+    "_title": {
+      "en": "Quick Reference",
+      "ne": "सार तालिका"
+    },
+    "h1": {
+      "en": "Quick reference",
+      "ne": "सार तालिका"
+    },
+    "lead": {
+      "en": "Lookup tables for components, wiring pins, Arduino functions, and library classes.",
+      "ne": "कम्पोनेन्ट, जडान पिन, Arduino फलन र लाइब्रेरी कक्षाका सार तालिका।"
+    },
+    "searchPlaceholder": {
+      "en": "Search tables (English or Nepali)…",
+      "ne": "तालिका खोज्नुहोस्…"
+    },
+    "secComponents": {
+      "en": "Components",
+      "ne": "कम्पोनेन्टहरू"
+    },
+    "secFunctions": {
+      "en": "Arduino Functions",
+      "ne": "Arduino फलनहरू"
+    },
+    "secClasses": {
+      "en": "Arduino Classes",
+      "ne": "Arduino कक्षाहरू"
+    },
+    "backHome": {
+      "en": "← Back to home",
+      "ne": "← गृह पृष्ठ"
     }
   },
   "uno": {
