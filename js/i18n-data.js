@@ -711,12 +711,28 @@ window.I18N = {
       "ne": "बिप ध्वनि। Passive लाई tone(); Active लाई digitalWrite(HIGH)।"
     },
     "exampleTitle": {
+      "en": "Simple beep",
+      "ne": "साधारण बिप"
+    },
+    "exampleDesc": {
+      "en": "Active buzzer: turn on for 200 ms, off for 500 ms using digitalWrite.",
+      "ne": "Active buzzer: digitalWrite ले २०० ms अन, ५०० ms अफ।"
+    },
+    "code": {
+      "en": "const int buzzerPin = 5;\n\nvoid setup() {\n  pinMode(buzzerPin, OUTPUT);\n}\n\nvoid loop() {\n  digitalWrite(buzzerPin, HIGH);\n  delay(200);\n  digitalWrite(buzzerPin, LOW);\n  delay(500);\n}",
+      "ne": "const int buzzerPin = 5;  // बजर पिन\n\nvoid setup() {\n  pinMode(buzzerPin, OUTPUT);\n}\n\nvoid loop() {\n  digitalWrite(buzzerPin, HIGH);  // बिप अन\n  delay(200);\n  digitalWrite(buzzerPin, LOW);   // बिप अफ\n  delay(500);\n}"
+    },
+    "exampleTitle2": {
       "en": "Doorbell pattern",
       "ne": "ढोकाको घण्टी ढाँचा"
     },
-    "exampleDesc": {
-      "en": "Two short beeps when button pressed.",
-      "ne": "बटन थिच्दा दुई छोटो बिप।"
+    "exampleDesc2": {
+      "en": "Next step — passive buzzer: two different pitches with tone().",
+      "ne": "अर्को चरण — passive buzzer: tone() ले दुई फरक स्वर।"
+    },
+    "codeTone": {
+      "en": "const int buzzerPin = 5;\n\nvoid setup() {\n  pinMode(buzzerPin, OUTPUT);\n}\n\nvoid loop() {\n  tone(buzzerPin, 880, 150);\n  delay(200);\n  tone(buzzerPin, 1100, 150);\n  delay(2000);\n}",
+      "ne": "const int buzzerPin = 5;\n\nvoid setup() {\n  pinMode(buzzerPin, OUTPUT);\n}\n\nvoid loop() {\n  tone(buzzerPin, 880, 150);   // पहिलो स्वर\n  delay(200);\n  tone(buzzerPin, 1100, 150);  // दोस्रो स्वर\n  delay(2000);\n}"
     }
   },
   "pinmode": {

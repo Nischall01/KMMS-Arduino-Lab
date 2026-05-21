@@ -149,6 +149,7 @@ compPage(
   "Sweep 0° to 180°",
   "Move a robot arm back and forth smoothly.",
   `#include <Servo.h>
+
 Servo myServo;
 
 void setup() {
@@ -449,8 +450,8 @@ compPage(
     unoEnd,
   "",
   [f("pinmode"), f("tone"), f("delay"), f("digitalwrite")],
-  "Doorbell pattern",
-  "Two short beeps when button pressed (with IR or button on another pin).",
+  "Simple beep",
+  "Active buzzer: turn on for 200 ms, off for 500 ms using digitalWrite.",
   `const int buzzerPin = 5;
 
 void setup() {
@@ -458,10 +459,10 @@ void setup() {
 }
 
 void loop() {
-  tone(buzzerPin, 880, 150);
+  digitalWrite(buzzerPin, HIGH);
   delay(200);
-  tone(buzzerPin, 1100, 150);
-  delay(2000);
+  digitalWrite(buzzerPin, LOW);
+  delay(500);
 }`,
   [rel("ultrasonic-sensor", "Ultrasonic Sensor"), rel("fire-sensor", "Fire Sensor")]
 );
@@ -524,13 +525,18 @@ classPage(
   </tbody></table>`,
   "<p>Signal → PWM pin <code>D6</code>, VCC → <code>5V</code>, GND → <code>GND</code>. See <a href=\"../components/servo-motor.html\">Servo Motor component</a>.</p>",
   `#include <Servo.h>
-Servo s;
-void setup() { s.attach(6); }
+
+Servo myServo;
+
+void setup() {
+  myServo.attach(6);
+}
+
 void loop() {
-  s.write(45);
-  delay(1000);
-  s.write(135);
-  delay(1000);
+  myServo.write(0);
+  delay(500);
+  myServo.write(180);
+  delay(500);
 }`,
   [
     ["../components/servo-motor.html", "Servo Motor"],

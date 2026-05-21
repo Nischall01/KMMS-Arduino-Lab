@@ -25,14 +25,19 @@
     <h2 data-i18n="common.sec.wiring" data-i18n-heading="true">Wiring to Uno · जडान</h2>
     <p>Signal → PWM pin <code>D6</code>, VCC → <code>5V</code>, GND → <code>GND</code>. See <a href="../components/servo-motor.html">Servo Motor component</a>.</p>
     <h2 data-i18n="common.sec.example" data-i18n-heading="true">Example · उदाहरण</h2>
-    <pre>#include <Servo.h>
-Servo s;
-void setup() { s.attach(6); }
+    <pre>#include &lt;Servo.h&gt;
+
+Servo myServo;
+
+void setup() {
+  myServo.attach(6);
+}
+
 void loop() {
-  s.write(45);
-  delay(1000);
-  s.write(135);
-  delay(1000);
+  myServo.write(0);
+  delay(500);
+  myServo.write(180);
+  delay(500);
 }</pre>
     <h2 data-i18n="common.sec.related" data-i18n-heading="true">Related</h2>
     <ul class="pill-list">

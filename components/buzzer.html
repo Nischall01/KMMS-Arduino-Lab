@@ -39,8 +39,21 @@
       <li><a href="../functions/digitalwrite.html">digitalwrite()</a></li>
     </ul>
     <h2 data-i18n="common.sec.example" data-i18n-heading="true">Example use case · उदाहरण</h2>
-    <p><strong data-i18n="exampleTitle">Doorbell pattern</strong> — <span data-i18n="exampleDesc">Two short beeps when button pressed (with IR or button on another pin).</span></p>
+    <p><strong data-i18n="exampleTitle">Simple beep</strong> — <span data-i18n="exampleDesc">Active buzzer: turn on for 200 ms, off for 500 ms using digitalWrite.</span></p>
     <pre data-i18n-code="code">const int buzzerPin = 5;
+
+void setup() {
+  pinMode(buzzerPin, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(buzzerPin, HIGH);
+  delay(200);
+  digitalWrite(buzzerPin, LOW);
+  delay(500);
+}</pre>
+    <p><strong data-i18n="exampleTitle2">Doorbell pattern</strong> — <span data-i18n="exampleDesc2">Next step — passive buzzer: two different pitches with tone().</span></p>
+    <pre data-i18n-code="codeTone">const int buzzerPin = 5;
 
 void setup() {
   pinMode(buzzerPin, OUTPUT);
