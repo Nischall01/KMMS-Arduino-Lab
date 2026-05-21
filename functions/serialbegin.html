@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serial.begin() | Serial सुरु</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body data-page="functions" data-page-id="serialbegin">
+  <div id="site-header"></div>
+  <main>
+    <nav id="breadcrumbs" class="breadcrumbs" data-trail='[{"label":"Home","href":"index.html"},{"label":"Functions","href":"index.html#functions"},{"label":"Serial.begin()"}]'></nav>
+    <span class="metaphor" data-i18n="metaphor">Open the chat line · कुराकानी सुरु</span>
+    <h1 data-i18n="h1">Serial.begin()</h1>
+    <span class="label-ne" data-i18n-ne="labelNe">Serial सुरु</span>
+    <p data-i18n="desc">Starts hardware Serial communication at a chosen speed (baud rate). Call once in setup() before Serial.print() or Serial.println(). On Uno, this uses pins D0 (RX) and D1 (TX) through USB.</p>
+    <h2 data-i18n="common.sec.syntax" data-i18n-heading="true">Syntax</h2>
+    <pre>Serial.begin(baud);</pre>
+    <h2 data-i18n="common.sec.parameters" data-i18n-heading="true">Parameters</h2>
+    <table><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td><code>baud</code></td><td>Bits per second — usually <code>9600</code> (must match Serial Monitor)</td></tr></tbody></table>
+    <h2 data-i18n="common.sec.returns" data-i18n-heading="true">Returns</h2>
+    <p>Nothing (void).</p>
+    <h2 data-i18n="common.sec.whenUse" data-i18n-heading="true">When to use</h2>
+    <ul>
+      <li>Debug sensor values on the computer</li>
+      <li>See messages in Arduino IDE Serial Monitor</li>
+      <li>Talk to Bluetooth/GPS modules on D0/D1</li>
+    </ul>
+    <h2 data-i18n="common.sec.mistakes" data-i18n-heading="true">Common mistakes</h2>
+    <div class="callout callout-warning" data-i18n-html="mistakes"><strong>Baud rate</strong> Serial Monitor must use the same speed as <code>Serial.begin()</code>. Do not wire course components to D0/D1 while using USB Serial — see <a href="../uno.html#secSerial">Uno Serial pins</a>.</div>
+    <h2 data-i18n="common.sec.exampleShort" data-i18n-heading="true">Example</h2>
+    <pre>void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  Serial.println("Ready!");
+  delay(1000);
+}</pre>
+    <h2 data-i18n="common.sec.seeAlso" data-i18n-heading="true">See also</h2>
+    <ul class="pill-list">
+      <li><a href="serialprintln.html">Serial.println()</a></li>
+      <li><a href="../uno.html#secSerial">D0 &amp; D1 — Serial pins</a></li>
+    </ul>
+    <h2 data-i18n="common.sec.usedBy" data-i18n-heading="true">Used by components</h2>
+    <ul class="pill-list">
+      <li><a href="../classes/newping.html">NewPing</a> (debug distance)</li>
+    </ul>
+    <a class="back-link" href="../index.html#functions"><span data-i18n="common.sec.backFunctions">← All functions</span></a>
+  </main>
+  <div id="site-footer"></div>
+  <script src="../js/i18n-data.js"></script>
+  <script src="../js/i18n.js"></script>
+  <script src="../js/layout.js"></script>
+</body>
+</html>

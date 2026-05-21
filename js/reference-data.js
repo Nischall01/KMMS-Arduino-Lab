@@ -394,6 +394,24 @@ window.REF_FUNCTIONS = [
     syntax: "tone(pin, freq, duration);",
     usedBy: ["buzzer", "fire-sensor", "ultrasonic-sensor"],
   },
+  {
+    id: "serialbegin",
+    href: "functions/serialbegin.html",
+    name: "Serial.begin()",
+    metaphor: { en: "Open the chat line", ne: "कुराकानी सुरु" },
+    purpose: { en: "Start Serial at baud rate (USB D0/D1)", ne: "Serial baud rate मा सुरु (USB D0/D1)" },
+    syntax: "Serial.begin(9600);",
+    usedBy: ["ultrasonic-sensor"],
+  },
+  {
+    id: "serialprintln",
+    href: "functions/serialprintln.html",
+    name: "Serial.println()",
+    metaphor: { en: "Send a message", ne: "सन्देश पठाउनुहोस्" },
+    purpose: { en: "Print text/numbers to Serial Monitor", ne: "Serial Monitor मा पाठ/संख्या" },
+    syntax: "Serial.println(value);",
+    usedBy: ["ultrasonic-sensor", "potentiometer"],
+  },
 ];
 
 window.REF_CLASSES = [

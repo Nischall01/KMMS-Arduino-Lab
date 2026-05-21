@@ -121,7 +121,7 @@ void loop() {
       <thead><tr><th>Type</th><th>Pins</th><th>Use</th></tr></thead>
       <tbody>
         <tr><td>5V / GND</td><td>Power headers</td><td>Power sensors and modules (check current!)</td></tr>
-        <tr><td>Serial (UART)</td><td><code>D0</code> RX, <code>D1</code> TX</td><td>USB upload, <code>Serial Monitor</code>, GPS/Bluetooth modules — avoid wiring other parts here during class projects</td></tr>
+        <tr><td>Serial (UART)</td><td><code>D0</code> RX, <code>D1</code> TX</td><td>USB upload, <code>Serial Monitor</code> — <a href="functions/serialbegin.html">Serial.begin()</a>, <a href="functions/serialprintln.html">Serial.println()</a></td></tr>
         <tr><td>Digital</td><td>D2–D13</td><td>ON/OFF signals — <a href="functions/digitalwrite.html">digitalWrite</a>, <a href="functions/digitalread.html">digitalRead</a></td></tr>
         <tr><td>PWM ~</td><td>D3, D5, D6, D9, D10, D11</td><td>Variable power — <a href="functions/analogwrite.html">analogWrite</a> (0–255)</td></tr>
         <tr><td>Analog IN</td><td>A0–A5</td><td>Variable voltage — <a href="functions/analogread.html">analogRead</a> (0–1023)</td></tr>

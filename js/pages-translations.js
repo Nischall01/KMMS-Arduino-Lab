@@ -23,6 +23,8 @@ module.exports = {
       millis: { title: "millis()", ne: "पृष्ठभूमि स्टपवाच", desc: { en: "Non-blocking time without stopping everything.", ne: "ब्लक नगरी समय मापन।" } },
       pulsein: { title: "pulseIn()", ne: "सिग्नल अवधि", desc: { en: "Measure how long a pulse stays HIGH/LOW.", ne: "पल्स कति बेर HIGH/LOW रहन्छ।" } },
       tone: { title: "tone()", ne: "ध्वनि बनाउनुहोस्", desc: { en: "Play a frequency on a speaker pin.", ne: "स्पिकर पिनमा ध्वनि।" } },
+      serialbegin: { title: "Serial.begin()", ne: "Serial सुरु", desc: { en: "Start USB Serial at a baud rate.", ne: "USB Serial baud rate मा सुरु।" } },
+      serialprintln: { title: "Serial.println()", ne: "Serial प्रिन्ट", desc: { en: "Print debug text to Serial Monitor.", ne: "Serial Monitor मा डिबग पाठ।" } },
     },
     classCards: {
       servo: { title: "Servo", ne: "Servo.h", desc: { en: "Control hobby servo motors easily.", ne: "सर्वो मोटर सजिलै चलाउनुहोस्।" } },
@@ -259,6 +261,32 @@ module.exports = {
     labelNe: { en: "Tone", ne: "टोन" },
     desc: { en: "Generates a square wave at a given frequency — drives a passive buzzer.", ne: "दिएको फ्रिक्वेन्सीमा ध्वनि — passive बजर।" },
     mistakes: { en: "Call noTone(pin) to stop sound when not using duration parameter.", ne: "duration नभए noTone(pin) ले रोक्नुहोस्।" },
+  },
+  serialbegin: {
+    h1: { en: "Serial.begin()", ne: "Serial.begin()" },
+    metaphor: { en: "Open the chat line", ne: "कुराकानी सुरु" },
+    labelNe: { en: "Start Serial", ne: "Serial सुरु" },
+    desc: {
+      en: "Starts hardware Serial communication at a chosen speed (baud rate). Call once in setup() before Serial.print() or Serial.println(). On Uno, this uses pins D0 (RX) and D1 (TX) through USB.",
+      ne: "चुनेको baud rate मा Serial सुरु गर्छ। setup() मा एक पटक, print/println अघि। UNO मा D0/D1 USB मार्फत।",
+    },
+    mistakes: {
+      en: "<strong>Baud rate</strong> Serial Monitor must use the same speed as <code>Serial.begin()</code>. Do not wire course components to D0/D1 while using USB Serial — see <a href=\"../uno.html#secSerial\">Uno Serial pins</a>.",
+      ne: "<strong>Baud</strong> Serial Monitor को गति <code>Serial.begin()</code> सँग मिल्नुपर्छ। USB Serial प्रयोग गर्दा D0/D1 मा कम्पोनेन्ट नजोड्नुहोस् — <a href=\"../uno.html#secSerial\">Serial पिन</a> हेर्नुहोस्।",
+    },
+  },
+  serialprintln: {
+    h1: { en: "Serial.println()", ne: "Serial.println()" },
+    metaphor: { en: "Send a message", ne: "सन्देश पठाउनुहोस्" },
+    labelNe: { en: "Serial print", ne: "Serial प्रिन्ट" },
+    desc: {
+      en: "Sends text or numbers to your computer over USB and starts a new line after each message. Open Serial Monitor (Tools → Serial Monitor) to read the output.",
+      ne: "USB बाट कम्प्युटरमा पाठ वा संख्या पठाउँछ र नयाँ लाइन थप्छ। Serial Monitor (Tools → Serial Monitor) मा पढ्नुहोस्।",
+    },
+    mistakes: {
+      en: "<strong>Setup first</strong> Call <code>Serial.begin(9600)</code> in setup() before any print. If Serial Monitor shows garbage, check the baud rate matches.",
+      ne: "<strong>पहिले setup</strong> print अघि setup() मा <code>Serial.begin(9600)</code>। Monitor मा garbage देखिए baud rate जाँच गर्नुहोस्।",
+    },
   },
   servo: {
     h1: { en: "Servo Class", ne: "Servo कक्षा" },

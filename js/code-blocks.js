@@ -50,9 +50,9 @@
 
   /* Longer / more specific patterns first to avoid partial matches. */
   var DOC_LINKS = [
-    { re: /\bSerial\.println\b/g, href: "uno.html#secSerial", label: "Serial.println()" },
-    { re: /\bSerial\.print\b/g, href: "uno.html#secSerial", label: "Serial.print()" },
-    { re: /\bSerial\.begin\b/g, href: "uno.html#secSerial", label: "Serial.begin()" },
+    { re: /\bSerial\.println\b/g, href: "functions/serialprintln.html", label: "Serial.println()" },
+    { re: /\bSerial\.print\b/g, href: "functions/serialprintln.html", label: "Serial.print()" },
+    { re: /\bSerial\.begin\b/g, href: "functions/serialbegin.html", label: "Serial.begin()" },
     { re: /\bdigitalWrite\b/g, href: "functions/digitalwrite.html", label: "digitalWrite()" },
     { re: /\bdigitalRead\b/g, href: "functions/digitalread.html", label: "digitalRead()" },
     { re: /\banalogWrite\b/g, href: "functions/analogwrite.html", label: "analogWrite()" },

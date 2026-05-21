@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serial.println() | Serial प्रिन्ट</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body data-page="functions" data-page-id="serialprintln">
+  <div id="site-header"></div>
+  <main>
+    <nav id="breadcrumbs" class="breadcrumbs" data-trail='[{"label":"Home","href":"index.html"},{"label":"Functions","href":"index.html#functions"},{"label":"Serial.println()"}]'></nav>
+    <span class="metaphor" data-i18n="metaphor">Send a message · सन्देश पठाउनुहोस्</span>
+    <h1 data-i18n="h1">Serial.println()</h1>
+    <span class="label-ne" data-i18n-ne="labelNe">Serial प्रिन्ट</span>
+    <p data-i18n="desc">Sends text or numbers to your computer over USB and starts a new line after each message. Open Serial Monitor (Tools → Serial Monitor) to read the output.</p>
+    <h2 data-i18n="common.sec.syntax" data-i18n-heading="true">Syntax</h2>
+    <pre>Serial.println(value);
+Serial.print(value);   // same, but no new line</pre>
+    <h2 data-i18n="common.sec.parameters" data-i18n-heading="true">Parameters</h2>
+    <table><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td><code>value</code></td><td>Text in quotes, a number, or a variable (e.g. sensor reading)</td></tr></tbody></table>
+    <h2 data-i18n="common.sec.returns" data-i18n-heading="true">Returns</h2>
+    <p>Nothing (void).</p>
+    <h2 data-i18n="common.sec.whenUse" data-i18n-heading="true">When to use</h2>
+    <ul>
+      <li>Print distance, temperature, or button state while testing</li>
+      <li>Confirm your code reached a certain line</li>
+      <li>Log values without an LCD screen</li>
+    </ul>
+    <h2 data-i18n="common.sec.mistakes" data-i18n-heading="true">Common mistakes</h2>
+    <div class="callout callout-warning" data-i18n-html="mistakes"><strong>Setup first</strong> Call <code>Serial.begin(9600)</code> in setup() before any print. If Serial Monitor shows garbage, check the baud rate matches.</div>
+    <h2 data-i18n="common.sec.exampleShort" data-i18n-heading="true">Example</h2>
+    <pre>void setup() {
+  Serial.begin(9600);
+  pinMode(A0, INPUT);
+}
+
+void loop() {
+  int light = analogRead(A0);
+  Serial.print("Light: ");
+  Serial.println(light);
+  delay(500);
+}</pre>
+    <h2 data-i18n="common.sec.seeAlso" data-i18n-heading="true">See also</h2>
+    <ul class="pill-list">
+      <li><a href="serialbegin.html">Serial.begin()</a></li>
+      <li><a href="analogread.html">analogRead()</a></li>
+      <li><a href="../uno.html#secSerial">D0 &amp; D1 — Serial pins</a></li>
+    </ul>
+    <h2 data-i18n="common.sec.usedBy" data-i18n-heading="true">Used by components</h2>
+    <ul class="pill-list">
+      <li><a href="../classes/newping.html">NewPing</a> (debug distance)</li>
+      <li><a href="../components/potentiometer.html">Potentiometer</a> (debug knob value)</li>
+    </ul>
+    <a class="back-link" href="../index.html#functions"><span data-i18n="common.sec.backFunctions">← All functions</span></a>
+  </main>
+  <div id="site-footer"></div>
+  <script src="../js/i18n-data.js"></script>
+  <script src="../js/i18n.js"></script>
+  <script src="../js/layout.js"></script>
+</body>
+</html>
