@@ -1,5 +1,6 @@
 # CDN / cache artifacts
 *.R1H75Y0
+build-info.json
 
 # OS
 .DS_Store

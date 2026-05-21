@@ -192,199 +192,217 @@ window.I18N = {
       "en": "Arduino Classes",
       "ne": "Arduino कक्षाहरू"
     },
-    "cards": {
-      "builtin-led": {
-        "title": {
-          "en": "Built-in LED",
-          "ne": "अन्तर्निर्मित LED"
-        },
-        "desc": {
-          "en": "Onboard LED on pin D13 — your first blink project.",
-          "ne": "पिन D13 मा बोर्डको LED — पहिलो ब्लिङ्क प्रोजेक्ट।"
-        }
-      },
-      "servo-motor": {
-        "title": {
-          "en": "Servo Motor",
-          "ne": "सर्वो मोटर"
-        },
-        "desc": {
-          "en": "Precise angle control for robot arms and gates.",
-          "ne": "रोबोट हात र गेटका लागि कोण नियन्त्रण।"
-        }
-      },
-      "dc-motor-l298n": {
-        "title": {
-          "en": "DC Motor + L298N",
-          "ne": "DC मोटर + L298N"
-        },
-        "desc": {
-          "en": "Drive wheels and fans with a motor driver module.",
-          "ne": "मोटर ड्राइभरले पाङ्ग्रा र पंखा चलाउँछ।"
-        }
-      },
-      "relay": {
-        "title": {
-          "en": "Relay",
-          "ne": "रिले"
-        },
-        "desc": {
-          "en": "Switch high-power devices safely from Arduino.",
-          "ne": "ठूलो लोड Arduino बाट सुरक्षित स्विच।"
-        }
-      },
-      "ir-sensor": {
-        "title": {
-          "en": "IR Sensor",
-          "ne": "IR सेन्सर"
-        },
-        "desc": {
-          "en": "Detect obstacles and line for line-following robots.",
-          "ne": "बाधा र लाइन पत्ता लगाउँछ।"
-        }
-      },
-      "ultrasonic-sensor": {
-        "title": {
-          "en": "Ultrasonic Sensor",
-          "ne": "अल्ट्रासोनिक सेन्सर"
-        },
-        "desc": {
-          "en": "Measure distance with sound pulses (HC-SR04).",
-          "ne": "ध्वनि पल्सले दूरी माप्छ (HC-SR04)।"
-        }
-      },
-      "fire-sensor": {
-        "title": {
-          "en": "Fire Sensor",
-          "ne": "आगो सेन्सर"
-        },
-        "desc": {
-          "en": "Detect flame or heat for safety alarms.",
-          "ne": "ज्वाला वा तापले अलार्म।"
-        }
-      },
-      "potentiometer": {
-        "title": {
-          "en": "Potentiometer",
-          "ne": "पोटेन्सियोमिटर"
-        },
-        "desc": {
-          "en": "Manual knob input — brightness or speed control.",
-          "ne": "घुमाउने knob — चमक वा गति।"
-        }
-      },
-      "leds": {
-        "title": {
-          "en": "LEDs (External)",
-          "ne": "बाह्य LED"
-        },
-        "desc": {
-          "en": "Extra indicator lights with a current-limiting resistor.",
-          "ne": "रेजिस्टरसहित अतिरिक्त बत्ती।"
-        }
-      },
-      "buzzer": {
-        "title": {
-          "en": "Buzzer",
-          "ne": "बजर"
-        },
-        "desc": {
-          "en": "Beeps and tones for alarms and feedback.",
-          "ne": "अलार्म र संकेतका लागि बिप।"
-        }
-      }
+    "card.builtin-led.title": {
+      "en": "Built-in LED",
+      "ne": "अन्तर्निर्मित LED"
     },
-    "fnCards": {
-      "pinmode": {
-        "title": "pinMode()",
-        "ne": "कोठा तयार पार्नुहोस्",
-        "desc": {
-          "en": "Set a pin as INPUT or OUTPUT.",
-          "ne": "पिन INPUT वा OUTPUT बनाउनुहोस्।"
-        }
-      },
-      "digitalwrite": {
-        "title": "digitalWrite()",
-        "ne": "ON/OFF गर्नुहोस्",
-        "desc": {
-          "en": "Turn a digital pin HIGH or LOW.",
-          "ne": "पिन HIGH वा LOW गर्नुहोस्।"
-        }
-      },
-      "digitalread": {
-        "title": "digitalRead()",
-        "ne": "स्विच जाँच",
-        "desc": {
-          "en": "Read HIGH or LOW from a digital pin.",
-          "ne": "डिजिटल पिनबाट अवस्था पढ्नुहोस्।"
-        }
-      },
-      "analogread": {
-        "title": "analogRead()",
-        "ne": "स्तर मापन",
-        "desc": {
-          "en": "Read 0–1023 from analog pins A0–A5.",
-          "ne": "A0–A5 बाट ०–१०२३ पढ्नुहोस्।"
-        }
-      },
-      "analogwrite": {
-        "title": "analogWrite()",
-        "ne": "तीव्रता नियन्त्रण",
-        "desc": {
-          "en": "PWM brightness or motor speed.",
-          "ne": "PWM चमक वा मोटर गति।"
-        }
-      },
-      "delay": {
-        "title": "delay()",
-        "ne": "सबै रोक्नुहोस्",
-        "desc": {
-          "en": "Pause the program for milliseconds.",
-          "ne": "मिलिसेकेन्डसम्म रोक्नुहोस्।"
-        }
-      },
-      "millis": {
-        "title": "millis()",
-        "ne": "पृष्ठभूमि स्टपवाच",
-        "desc": {
-          "en": "Non-blocking time without stopping everything.",
-          "ne": "ब्लक नगरी समय मापन।"
-        }
-      },
-      "pulsein": {
-        "title": "pulseIn()",
-        "ne": "सिग्नल अवधि",
-        "desc": {
-          "en": "Measure how long a pulse stays HIGH/LOW.",
-          "ne": "पल्स कति बेर HIGH/LOW रहन्छ।"
-        }
-      },
-      "tone": {
-        "title": "tone()",
-        "ne": "ध्वनि बनाउनुहोस्",
-        "desc": {
-          "en": "Play a frequency on a speaker pin.",
-          "ne": "स्पिकर पिनमा ध्वनि।"
-        }
-      }
+    "card.builtin-led.desc": {
+      "en": "Onboard LED on pin D13 — your first blink project.",
+      "ne": "पिन D13 मा बोर्डको LED — पहिलो ब्लिङ्क प्रोजेक्ट।"
     },
-    "classCards": {
-      "servo": {
-        "title": "Servo",
-        "ne": "Servo.h",
-        "desc": {
-          "en": "Control hobby servo motors easily.",
-          "ne": "सर्वो मोटर सजिलै चलाउनुहोस्।"
-        }
-      },
-      "newping": {
-        "title": "NewPing",
-        "ne": "NewPing.h",
-        "desc": {
-          "en": "Simpler ultrasonic distance readings.",
-          "ne": "अल्ट्रासोनिक दूरी सजिलो।"
-        }
-      }
+    "card.servo-motor.title": {
+      "en": "Servo Motor",
+      "ne": "सर्वो मोटर"
+    },
+    "card.servo-motor.desc": {
+      "en": "Precise angle control for robot arms and gates.",
+      "ne": "रोबोट हात र गेटका लागि कोण नियन्त्रण।"
+    },
+    "card.dc-motor-l298n.title": {
+      "en": "DC Motor + L298N",
+      "ne": "DC मोटर + L298N"
+    },
+    "card.dc-motor-l298n.desc": {
+      "en": "Drive wheels and fans with a motor driver module.",
+      "ne": "मोटर ड्राइभरले पाङ्ग्रा र पंखा चलाउँछ।"
+    },
+    "card.relay.title": {
+      "en": "Relay",
+      "ne": "रिले"
+    },
+    "card.relay.desc": {
+      "en": "Switch high-power devices safely from Arduino.",
+      "ne": "ठूलो लोड Arduino बाट सुरक्षित स्विच।"
+    },
+    "card.ir-sensor.title": {
+      "en": "IR Sensor",
+      "ne": "IR सेन्सर"
+    },
+    "card.ir-sensor.desc": {
+      "en": "Detect obstacles and line for line-following robots.",
+      "ne": "बाधा र लाइन पत्ता लगाउँछ।"
+    },
+    "card.ultrasonic-sensor.title": {
+      "en": "Ultrasonic Sensor",
+      "ne": "अल्ट्रासोनिक सेन्सर"
+    },
+    "card.ultrasonic-sensor.desc": {
+      "en": "Measure distance with sound pulses (HC-SR04).",
+      "ne": "ध्वनि पल्सले दूरी माप्छ (HC-SR04)।"
+    },
+    "card.fire-sensor.title": {
+      "en": "Fire Sensor",
+      "ne": "आगो सेन्सर"
+    },
+    "card.fire-sensor.desc": {
+      "en": "Detect flame or heat for safety alarms.",
+      "ne": "ज्वाला वा तापले अलार्म।"
+    },
+    "card.potentiometer.title": {
+      "en": "Potentiometer",
+      "ne": "पोटेन्सियोमिटर"
+    },
+    "card.potentiometer.desc": {
+      "en": "Manual knob input — brightness or speed control.",
+      "ne": "घुमाउने knob — चमक वा गति।"
+    },
+    "card.leds.title": {
+      "en": "LEDs (External)",
+      "ne": "बाह्य LED"
+    },
+    "card.leds.desc": {
+      "en": "Extra indicator lights with a current-limiting resistor.",
+      "ne": "रेजिस्टरसहित अतिरिक्त बत्ती।"
+    },
+    "card.buzzer.title": {
+      "en": "Buzzer",
+      "ne": "बजर"
+    },
+    "card.buzzer.desc": {
+      "en": "Beeps and tones for alarms and feedback.",
+      "ne": "अलार्म र संकेतका लागि बिप।"
+    },
+    "fncard.pinmode.title": {
+      "en": "pinMode()",
+      "ne": "pinMode()"
+    },
+    "fncard.pinmode.ne": {
+      "en": "कोठा तयार पार्नुहोस्",
+      "ne": "कोठा तयार पार्नुहोस्"
+    },
+    "fncard.pinmode.desc": {
+      "en": "Set a pin as INPUT or OUTPUT.",
+      "ne": "पिन INPUT वा OUTPUT बनाउनुहोस्।"
+    },
+    "fncard.digitalwrite.title": {
+      "en": "digitalWrite()",
+      "ne": "digitalWrite()"
+    },
+    "fncard.digitalwrite.ne": {
+      "en": "ON/OFF गर्नुहोस्",
+      "ne": "ON/OFF गर्नुहोस्"
+    },
+    "fncard.digitalwrite.desc": {
+      "en": "Turn a digital pin HIGH or LOW.",
+      "ne": "पिन HIGH वा LOW गर्नुहोस्।"
+    },
+    "fncard.digitalread.title": {
+      "en": "digitalRead()",
+      "ne": "digitalRead()"
+    },
+    "fncard.digitalread.ne": {
+      "en": "स्विच जाँच",
+      "ne": "स्विच जाँच"
+    },
+    "fncard.digitalread.desc": {
+      "en": "Read HIGH or LOW from a digital pin.",
+      "ne": "डिजिटल पिनबाट अवस्था पढ्नुहोस्।"
+    },
+    "fncard.analogread.title": {
+      "en": "analogRead()",
+      "ne": "analogRead()"
+    },
+    "fncard.analogread.ne": {
+      "en": "स्तर मापन",
+      "ne": "स्तर मापन"
+    },
+    "fncard.analogread.desc": {
+      "en": "Read 0–1023 from analog pins A0–A5.",
+      "ne": "A0–A5 बाट ०–१०२३ पढ्नुहोस्।"
+    },
+    "fncard.analogwrite.title": {
+      "en": "analogWrite()",
+      "ne": "analogWrite()"
+    },
+    "fncard.analogwrite.ne": {
+      "en": "तीव्रता नियन्त्रण",
+      "ne": "तीव्रता नियन्त्रण"
+    },
+    "fncard.analogwrite.desc": {
+      "en": "PWM brightness or motor speed.",
+      "ne": "PWM चमक वा मोटर गति।"
+    },
+    "fncard.delay.title": {
+      "en": "delay()",
+      "ne": "delay()"
+    },
+    "fncard.delay.ne": {
+      "en": "सबै रोक्नुहोस्",
+      "ne": "सबै रोक्नुहोस्"
+    },
+    "fncard.delay.desc": {
+      "en": "Pause the program for milliseconds.",
+      "ne": "मिलिसेकेन्डसम्म रोक्नुहोस्।"
+    },
+    "fncard.millis.title": {
+      "en": "millis()",
+      "ne": "millis()"
+    },
+    "fncard.millis.ne": {
+      "en": "पृष्ठभूमि स्टपवाच",
+      "ne": "पृष्ठभूमि स्टपवाच"
+    },
+    "fncard.millis.desc": {
+      "en": "Non-blocking time without stopping everything.",
+      "ne": "ब्लक नगरी समय मापन।"
+    },
+    "fncard.pulsein.title": {
+      "en": "pulseIn()",
+      "ne": "pulseIn()"
+    },
+    "fncard.pulsein.ne": {
+      "en": "सिग्नल अवधि",
+      "ne": "सिग्नल अवधि"
+    },
+    "fncard.pulsein.desc": {
+      "en": "Measure how long a pulse stays HIGH/LOW.",
+      "ne": "पल्स कति बेर HIGH/LOW रहन्छ।"
+    },
+    "fncard.tone.title": {
+      "en": "tone()",
+      "ne": "tone()"
+    },
+    "fncard.tone.ne": {
+      "en": "ध्वनि बनाउनुहोस्",
+      "ne": "ध्वनि बनाउनुहोस्"
+    },
+    "fncard.tone.desc": {
+      "en": "Play a frequency on a speaker pin.",
+      "ne": "स्पिकर पिनमा ध्वनि।"
+    },
+    "clcard.servo.title": {
+      "en": "Servo",
+      "ne": "Servo"
+    },
+    "clcard.servo.ne": {
+      "en": "Servo.h",
+      "ne": "Servo.h"
+    },
+    "clcard.servo.desc": {
+      "en": "Control hobby servo motors easily.",
+      "ne": "सर्वो मोटर सजिलै चलाउनुहोस्।"
+    },
+    "clcard.newping.title": {
+      "en": "NewPing",
+      "ne": "NewPing"
+    },
+    "clcard.newping.ne": {
+      "en": "NewPing.h",
+      "ne": "NewPing.h"
+    },
+    "clcard.newping.desc": {
+      "en": "Simpler ultrasonic distance readings.",
+      "ne": "अल्ट्रासोनिक दूरी सजिलो।"
     }
   },
   "reference": {
@@ -430,10 +448,6 @@ window.I18N = {
       "en": "Arduino Uno Pinout",
       "ne": "Arduino UNO पिन आरेख"
     },
-    "lead": {
-      "en": "The Uno is the <strong>brain</strong> of your system. Every component connects to specific pins for power, ground, and signals.",
-      "ne": "UNO तपाईंको प्रणालीको <strong>मस्तिष्क</strong> हो। हरेक कम्पोनेन्ट शक्ति, ग्राउन्ड र सिग्नलका लागि निश्चित पिनमा जोडिन्छ।"
-    },
     "secDiagram": {
       "en": "Pin diagram",
       "ne": "पिन चित्र"
@@ -453,6 +467,10 @@ window.I18N = {
     "secSiteComponents": {
       "en": "Components on this site",
       "ne": "यस साइटका कम्पोनेन्ट"
+    },
+    "lead": {
+      "en": "The Uno is the <strong>brain</strong> of your system. Every component connects to specific pins for power, ground, and signals.",
+      "ne": "UNO तपाईंको प्रणालीको <strong>मस्तिष्क</strong> हो। हरेक कम्पोनेन्ट शक्ति, ग्राउन्ड र सिग्नलका लागि निश्चित पिनमा जोडिन्छ।"
     },
     "serialIntro": {
       "en": "Pins D0 and D1 are reserved for hardware Serial communication (UART). They let the Arduino talk to your computer—or to another device such as Bluetooth or GPS.",

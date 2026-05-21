@@ -78,6 +78,20 @@ module.exports = {
       ne: "मोटर/रिले सिधै पिनबाट नहल्नुहोस् — L298N वा रिले मोड्युल। बाह्य शक्तिसँग GND साझा। UNO 5V करिब ४०० mA मात्र।",
     },
   },
+  "builtin-led": {
+    _title: { en: "Built-in LED", ne: "अन्तर्निर्मित LED" },
+    h1: { en: "Built-in LED", ne: "अन्तर्निर्मित LED" },
+    intro: {
+      en: "A small light already soldered on the Arduino board, connected to digital pin D13 through a resistor.",
+      ne: "Arduino बोर्डमा सोल्डर गरिएको सानो बत्ती, D13 मा जोडिएको।",
+    },
+    exampleTitle: { en: "SOS blink pattern", ne: "SOS ब्लिङ्क" },
+    exampleDesc: { en: "Flash the onboard LED in short and long bursts.", ne: "छोटो र लामो ब्लिङ्क।" },
+    code: {
+      en: "const int led = LED_BUILTIN;\n\nvoid setup() {\n  pinMode(led, OUTPUT);\n}\n\nvoid loop() {\n  for (int i = 0; i < 3; i++) { digitalWrite(led, HIGH); delay(200); digitalWrite(led, LOW); delay(200); }\n  delay(400);\n  for (int i = 0; i < 3; i++) { digitalWrite(led, HIGH); delay(600); digitalWrite(led, LOW); delay(200); }\n  delay(1000);\n}",
+      ne: "const int led = LED_BUILTIN;  // बोर्डको LED\n\nvoid setup() {\n  pinMode(led, OUTPUT);  // आउटपुट\n}\n\nvoid loop() {\n  for (int i = 0; i < 3; i++) { digitalWrite(led, HIGH); delay(200); digitalWrite(led, LOW); delay(200); }\n  delay(400);\n  for (int i = 0; i < 3; i++) { digitalWrite(led, HIGH); delay(600); digitalWrite(led, LOW); delay(200); }\n  delay(1000);\n}",
+    },
+  },
   "servo-motor": {
     h1: { en: "Servo Motor", ne: "सर्वो मोटर" },
     intro: { en: "A motor that rotates to a precise angle (usually 0°–180°), used in robot arms, gates, and camera mounts.", ne: "सटीक कोण (सामान्यतः ०°–१८०°) मा घुम्ने मोटर — रोबोट हात, गेटमा प्रयोग।" },

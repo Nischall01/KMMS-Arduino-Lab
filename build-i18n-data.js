@@ -58,29 +58,15 @@ const pages = {
     secComponents: { en: "Components", ne: "कम्पोनेन्टहरू" },
     secFunctions: { en: "Arduino Functions", ne: "Arduino फलनहरू" },
     secClasses: { en: "Arduino Classes", ne: "Arduino कक्षाहरू" },
-    ...extra.index,
   },
   reference: {
     _title: { en: "Quick Reference", ne: "सार तालिका" },
     h1: { en: "Quick reference", ne: "सार तालिका" },
-    lead: {
-      en: "Lookup tables for components, wiring pins, Arduino functions, and library classes.",
-      ne: "कम्पोनेन्ट, जडान पिन, Arduino फलन र लाइब्रेरी कक्षाका सार तालिका।",
-    },
-    searchPlaceholder: { en: "Search tables (English or Nepali)…", ne: "तालिका खोज्नुहोस्…" },
-    secComponents: { en: "Components", ne: "कम्पोनेन्टहरू" },
-    secFunctions: { en: "Arduino Functions", ne: "Arduino फलनहरू" },
-    secClasses: { en: "Arduino Classes", ne: "Arduino कक्षाहरू" },
-    backHome: { en: "← Back to home", ne: "← गृह पृष्ठ" },
     ...extra.reference,
   },
   uno: {
     _title: { en: "Arduino Uno Pinout", ne: "Arduino UNO पिन आरेख" },
     h1: { en: "Arduino Uno Pinout", ne: "Arduino UNO पिन आरेख" },
-    lead: {
-      en: "The Uno is the brain of your system. Every component connects to specific pins for power, ground, and signals.",
-      ne: "UNO तपाईंको प्रणालीको मस्तिष्क हो। हरेक कम्पोनेन्ट शक्ति, ग्राउन्ड र सिग्नलका लागि निश्चित पिनमा जोडिन्छ।",
-    },
     secDiagram: { en: "Pin diagram", ne: "पिन चित्र" },
     secSerial: { en: "D0 & D1 — Serial pins (UART)", ne: "D0 र D1 — सिरियल पिन (UART)" },
     secPinTypes: { en: "Pin types", ne: "पिन प्रकार" },
@@ -88,31 +74,12 @@ const pages = {
     secSiteComponents: { en: "Components on this site", ne: "यस साइटका कम्पोनेन्ट" },
     ...extra.uno,
   },
-  "builtin-led": {
-    _title: { en: "Built-in LED", ne: "अन्तर्निर्मित LED" },
-    h1: { en: "Built-in LED", ne: "अन्तर्निर्मित LED" },
-    intro: {
-      en: "A small light already soldered on the Arduino board, connected to digital pin D13 through a resistor.",
-      ne: "Arduino बोर्डमा सोल्डर गरिएको सानो बत्ती, D13 मा जोडिएको।",
-    },
-    exampleTitle: { en: "SOS blink pattern", ne: "SOS ब्लिङ्क" },
-    exampleDesc: { en: "Flash the onboard LED in short and long bursts.", ne: "छोटो र लामो ब्लिङ्क।" },
-    code: {
-      en: "const int led = LED_BUILTIN;\n\nvoid setup() {\n  pinMode(led, OUTPUT);\n}\n\nvoid loop() {\n  for (int i = 0; i < 3; i++) { digitalWrite(led, HIGH); delay(200); digitalWrite(led, LOW); delay(200); }\n  delay(400);\n  for (int i = 0; i < 3; i++) { digitalWrite(led, HIGH); delay(600); digitalWrite(led, LOW); delay(200); }\n  delay(1000);\n}",
-      ne: "const int led = LED_BUILTIN;  // बोर्डको LED\n\nvoid setup() {\n  pinMode(led, OUTPUT);  // आउटपुट\n}\n\nvoid loop() {\n  for (int i = 0; i < 3; i++) { digitalWrite(led, HIGH); delay(200); digitalWrite(led, LOW); delay(200); }\n  delay(400);\n  for (int i = 0; i < 3; i++) { digitalWrite(led, HIGH); delay(600); digitalWrite(led, LOW); delay(200); }\n  delay(1000);\n}",
-    },
-  },
 };
 
 Object.keys(extra).forEach((key) => {
-  if (key === "index" || key === "uno") return;
-  pages[key] = Object.assign({}, pages[key], extra[key]);
+  if (key === "index" || key === "reference" || key === "uno") return;
+  pages[key] = extra[key];
 });
-const idxExtra = extra.index || {};
-const unoExtra = extra.uno || {};
-["cards", "fnCards", "classCards"].forEach((k) => delete idxExtra[k]);
-Object.assign(pages.index, idxExtra);
-Object.assign(pages.uno, unoExtra);
 
 Object.keys(extra.index.cards || {}).forEach((id) => {
   const c = extra.index.cards[id];

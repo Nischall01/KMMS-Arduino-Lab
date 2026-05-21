@@ -10,7 +10,6 @@ Component photos live in ../components/.
   Uno_Ultrasonic_Buzzer.svg → ultrasonic-sensor.html (extra project)
   Uno_Smart_Stick_Setup.svg → ultrasonic-sensor.html (extra project)
   Uno_Potentiometer.svg    → potentiometer.html
-  Uno_led_button.svg       → (unused; LED+button variant)
   Uno_Buzzer.svg           → buzzer.html
 
 No diagram yet: relay, fire-sensor.
