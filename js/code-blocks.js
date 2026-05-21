@@ -364,6 +364,8 @@
     init();
   }
 
+  window.initCodeBlocks = init;
+
   window.addEventListener("langchange", onLangChange);
   window.addEventListener(
     "scroll",

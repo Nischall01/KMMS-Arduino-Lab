@@ -29,8 +29,8 @@
     <h2 data-i18n="common.sec.mistakes" data-i18n-heading="true">Common mistakes</h2>
     <div class="callout callout-warning" data-i18n-html="mistakes"><strong>Baud rate</strong> Serial Monitor must use the same speed as <code>Serial.begin()</code>. Do not wire course components to D0/D1 while using USB Serial — see <a href="../uno.html#secSerial">Uno Serial pins</a>.</div>
     <h2 data-i18n="common.sec.exampleShort" data-i18n-heading="true">Example</h2>
-    <pre>void setup() {
-  Serial.begin(9600);
+    <pre data-i18n-code="code">void setup() {
+  Serial.begin(9600);  // match Serial Monitor baud
 }
 
 void loop() {

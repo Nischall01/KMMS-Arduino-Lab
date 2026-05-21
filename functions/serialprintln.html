@@ -30,13 +30,13 @@ Serial.print(value);   // same, but no new line</pre>
     <h2 data-i18n="common.sec.mistakes" data-i18n-heading="true">Common mistakes</h2>
     <div class="callout callout-warning" data-i18n-html="mistakes"><strong>Setup first</strong> Call <code>Serial.begin(9600)</code> in setup() before any print. If Serial Monitor shows garbage, check the baud rate matches.</div>
     <h2 data-i18n="common.sec.exampleShort" data-i18n-heading="true">Example</h2>
-    <pre>void setup() {
-  Serial.begin(9600);
-  pinMode(A0, INPUT);
+    <pre data-i18n-code="code">void setup() {
+  Serial.begin(9600);  // start USB Serial
+  pinMode(A0, INPUT);  // knob or sensor on A0
 }
 
 void loop() {
-  int light = analogRead(A0);
+  int light = analogRead(A0);  // read 0–1023
   Serial.print("Light: ");
   Serial.println(light);
   delay(500);

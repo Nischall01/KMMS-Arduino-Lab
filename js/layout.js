@@ -206,7 +206,10 @@
     var files = ["code-explanations.js", "code-blocks.js"];
     var i = 0;
     function next() {
-      if (i >= files.length) return;
+      if (i >= files.length) {
+        if (typeof window.initCodeBlocks === "function") window.initCodeBlocks();
+        return;
+      }
       var s = document.createElement("script");
       s.src = prefix + "js/" + files[i++];
       s.onload = next;

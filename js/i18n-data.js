@@ -959,6 +959,10 @@ window.I18N = {
     "mistakes": {
       "en": "<strong>Baud rate</strong> Serial Monitor must use the same speed as <code>Serial.begin()</code>. Do not wire course components to D0/D1 while using USB Serial — see <a href=\"../uno.html#secSerial\">Uno Serial pins</a>.",
       "ne": "<strong>Baud</strong> Serial Monitor को गति <code>Serial.begin()</code> सँग मिल्नुपर्छ। USB Serial प्रयोग गर्दा D0/D1 मा कम्पोनेन्ट नजोड्नुहोस् — <a href=\"../uno.html#secSerial\">Serial पिन</a> हेर्नुहोस्।"
+    },
+    "code": {
+      "en": "void setup() {\n  Serial.begin(9600);  // match Serial Monitor baud\n}\n\nvoid loop() {\n  Serial.println(\"Ready!\");\n  delay(1000);\n}",
+      "ne": "void setup() {\n  Serial.begin(9600);  // Serial Monitor को baud सँग मिल्नुपर्छ\n}\n\nvoid loop() {\n  Serial.println(\"Ready!\");\n  delay(1000);\n}"
     }
   },
   "serialprintln": {
@@ -981,6 +985,10 @@ window.I18N = {
     "mistakes": {
       "en": "<strong>Setup first</strong> Call <code>Serial.begin(9600)</code> in setup() before any print. If Serial Monitor shows garbage, check the baud rate matches.",
       "ne": "<strong>पहिले setup</strong> print अघि setup() मा <code>Serial.begin(9600)</code>। Monitor मा garbage देखिए baud rate जाँच गर्नुहोस्।"
+    },
+    "code": {
+      "en": "void setup() {\n  Serial.begin(9600);  // start USB Serial\n  pinMode(A0, INPUT);  // knob or sensor on A0\n}\n\nvoid loop() {\n  int light = analogRead(A0);  // read 0–1023\n  Serial.print(\"Light: \");\n  Serial.println(light);\n  delay(500);\n}",
+      "ne": "void setup() {\n  Serial.begin(9600);  // USB Serial सुरु\n  pinMode(A0, INPUT);  // A0 मा knob वा सेन्सर\n}\n\nvoid loop() {\n  int light = analogRead(A0);  // ०–१०२३ पढ्नुहोस्\n  Serial.print(\"Light: \");\n  Serial.println(light);\n  delay(500);\n}"
     }
   },
   "servo": {
